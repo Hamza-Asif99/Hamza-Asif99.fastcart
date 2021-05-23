@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="design.css">
+
+    <script src="https://kit.fontawesome.com/0793418c64.js" crossorigin="anonymous"></script>
+   
+    <title>Bootstrap Front End</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="navMain">
+
+            <a href="#" class="navbar-brand"><i class="fas fa-store" aria-hidden="true"></i>
+                <span>FastCart</span></a>
+            
+        </div>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navSupportedContent" class="collapse navbar-collapse navItems">
+            <div class="search ">
+
+                <input class="input"  type="text" placeholder="Search">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <!-- <li class="nav-item"> -->
+            <!-- </li> -->
+            <ul class="navbar-nav active">
+                <li>
+                    <a href="#" class="nav-link">Login</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">SignUp</a>
+                </li>
+                <li>
+                    
+                    <a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container-fluid bodyDiv">
+
+        <div class="row bodyStarts">
+                                                                    <!-- Bootstrap display classes used to create
+                                                                    a more attractive design by removing categories div from sm and xs screens -->
+            <div class="parentCategories col-md-2 d-none d-md-flex">  
+
+                <div class=" categories">
+                    <h2>Categories</h2>
+                    <ul>
+                        <li><a href="#">Clothing</a></li>
+                        <li><a href="#">Electronics</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Sports</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="parentDiv col-12 col-sm-12 offset-md-1 col-md-4 belowNav">
+                
+                <div >
+                    <h1>Welcome To <br> The Ultimate <br> Shopping <br> Experience</h1>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-5 img">
+                <img src="pexels-andrea-piacquadio-919436.jpg" class="image" alt="">
+            </div>
+        </div>
+                                                    <!-- Categories show up below the main heading and image for smaller screens -->
+        <div class="row categoriesRow d-md-none ">
+            
+            <div class="col-12">
+
+                <h2>Categories</h2>
+            </div>
+           
+            
+            <div class="col-6 col-sm-3 center">
+                <h4>Clothing</h4>
+                <!-- <div class="centre"> -->
+                    <!-- <div> -->
+
+                        <ul>
+                            <li><a href="#">Men's Fashion</a></li>
+                            <li><a href="#">Women's Fashion</a></li>
+                            <li><a href="#">Baby Clothing</a></li>
+                            <li><a href="#">Gym Clothing</a></li>
+                        </ul>
+                    <!-- </div>k -->
+                <!-- </div> -->
+            </div>
+            <div class="col-6 col-sm-3 center">
+                <h4>Electronics</h4>
+                <ul>
+                    <li><a href="#">Phone</a></li>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Smart Watch</a></li>
+                    <li><a href="#">Monitor</a></li>
+                    <li><a href="#">Smart Home</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-sm-3 center">
+                <h4>Pets</h4>
+                <ul>
+                    <li><a href="#">Pet Toys</a></li>
+                    <li><a href="#">Pet Accessories</a></li>
+                    <li><a href="#">Pet Food</a></li>
+                    <li><a href="#">Pet Grooming</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-6 col-sm-3 center">
+                <h4>Outdoors</h4>
+                <ul>
+                    <li><a href="#">Hiking Gear</a></li>
+                    <li><a href="#">Running Gear</a></li>
+                    <li><a href="#">Gym Equipment</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    <!-- Items Start -->
+    <div class="container itemsDisplay">
+        <div class="row">
+            <!-- <h2></h2> -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="item">
+                    <a href="item.html">
+
+                        <img src="" alt="">;
+                        <h2></h2>
+                    </a>
+
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
