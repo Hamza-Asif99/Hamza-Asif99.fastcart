@@ -1,0 +1,50 @@
+﻿[
+    {
+        "ï»¿web-scraper-order": "1621686392-56",
+        "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
+        "title": "JOGAL Men's Flower Casual Button Down Short Sleeve Hawaiian Shirt Suits",
+        "images": "https://m.media-amazon.com/images/I/71abnYEKqML._AC_UL320_.jpg",
+        "prices": "30"
+
+    },
+    {
+        "ï»¿web-scraper-order": "1621686392-33",
+        "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
+        "images": "https://m.media-amazon.com/images/I/717Ad9VW5vL._AC_UL320_.jpg",
+        "title": "Hanes Men's Long-Sleeve ComfortSoft T-Shirt (Pack of 4)",
+        "prices":"20"
+    },
+
+    {
+        "ï»¿web-scraper-order": "1621686392-64",
+        "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
+        "title": "Hanes Men's Long-Sleeve ComfortSoft T-Shirt (Pack of 4)",
+        "images": "https://m.media-amazon.com/images/I/91YuQ25qu5L._AC_UL320_.jpg",
+        "prices":"40"
+    },
+    {
+        "ï»¿web-scraper-order": "1621686392-43",
+        "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
+        "images":"https://m.media-amazon.com/images/I/91YuQ25qu5L._AC_UL320_.jpg",
+        "title": "Amazon Essentials Men's Slim-Fit Long-Sleeve Pattern Pocket Oxford Shirt",
+        "prices":"15"
+    },
+   
+    {
+        "ï»¿web-scraper-order": "1621686392-47",
+        "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
+        "title": "VATPAVE Mens Floral Hawaiian Shirts Short Sleeve Button Down Beach Shirts",
+        "images": "https://m.media-amazon.com/images/I/71Svz58xiVL._AC_UL320_.jpg",
+        "prices":"45"
+
+    },
+    {
+        "ï»¿web-scraper-order": "1621686392-66",
+        "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
+        "title": "Gildan Men's Heavy Cotton T-Shirt, Style G5000, 2-Pack",
+        "images": "https://m.media-amazon.com/images/I/71Svz58xiVL._AC_UL320_.jpg",
+        "prices":"55"
+
+    }
+
+]
