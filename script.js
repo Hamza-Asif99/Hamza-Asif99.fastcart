@@ -104,21 +104,6 @@ for(let i =0;i<categoryLI.length;i++){
 
         }
 
-        // // if(categoryLI[i].innerHTML == "Clothing"){
-
-        // // }
-        // if(categoryLI[i].innerText == "Electronics"){
-
-        //     document.querySelector(".clickToShow ul").children[1].style.display = "block";
-        // }
-        // if(categoryLI[i].innerText == "Accessories"){
-
-        //     document.querySelector(".clickToShow ul").children[2].style.display = "block";
-        // }
-        // if(categoryLI[i].innerText == "Sports"){
-
-        //     document.querySelector(".clickToShow ul").children[3].style.display = "block";
-        // }
     });
 }
 var mainMenu = document.getElementById("mainMenu").addEventListener("click",function(){
@@ -131,5 +116,7 @@ var mainMenu = document.getElementById("mainMenu").addEventListener("click",func
     document.querySelectorAll(".clickToShow ul")[2].style.display="none";
     document.querySelectorAll(".clickToShow ul")[3].style.display="none";
 });
+
+
 
 

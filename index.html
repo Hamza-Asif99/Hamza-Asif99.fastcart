@@ -38,10 +38,10 @@
             <!-- </li> -->
             <ul class="navbar-nav active">
                 <li>
-                    <a href="#" class="nav-link">Login</a>
+                    <a href="#" class="nav-link" onclick="document.querySelector('.loginForm ').style.display='block'" >Login</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link">SignUp</a>
+                    <a href="#" class="nav-link" onclick="document.querySelector('.signupForm ').style.display='block'">SignUp</a>
                 </li>
                 <li>
                     
@@ -316,6 +316,78 @@
             
         </footer>
     </div>
+
+<!-- Login Form with Bootstrap -->
+
+    <div class="loginForm">
+
+        <div class="paretnDiv modal text-center" style="display: flex; justify-content: center;">
+
+            <div style="width: 65%;">
+                
+                <form action="" id="frm1" class="text-light">
+                    <span onclick="document.querySelector('.loginForm').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times"></i></span>
+                    <h2 class="text-center">Login</h2>
+                    <div class="form-group">
+                        <label for="pass">Enter Name</label>
+                        <input type="text" id="pass" class="form-control" placeholder="Name">
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="gpa">Enter Password</label>
+                        <input type="text" id="gpa" class="form-control" placeholder="Password">
+                        
+                    </div>
+                    <div class="text-center" >
+                        <button type="button" id="event1" class="btn btn-info">Login</button>
+                        <button type="submit" id="event2" class="btn btn-warning">Forgot Password?</button>
+                    </div>
+                    <input type="checkbox" checked>Remember Me
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-danger" onclick="document.querySelector('.loginForm').style.display='none'">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="signupForm">
+
+        <div class="paretnDiv modal text-center " style="display:flex; justify-content: center"  >
+
+            <div style="width: 65%;">
+                
+                <form action="" id="frm2" class="text-light">
+                    <span onclick="document.querySelector('.signupForm').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times"></i></span>
+                    <h2 class="text-center">Sign Up</h2>
+                    <div class="form-group">
+                        <label for="pass">Enter Name</label>
+                        <input type="text"  class="form-control" placeholder="Name">
+                        <label >Enter Email</label>
+                        <input type="text" class="form-control" placeholder="Name">
+                        <small>We Will Never Share This With Anyone</small>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="gpa">Enter Password</label>
+                        <input type="text"  class="form-control" placeholder="Password">
+                        <label for="gpa">Confirm Password</label>
+                        <input type="text"  class="form-control" placeholder="Password">
+                        
+                    </div>
+                    <div class="text-center" >
+                        <button type="button"  class="btn btn-info">Login</button>
+                        <!-- <button type="submit" id="event2" class="btn btn-warning">Forgot Password?</button> -->
+                    </div>
+                    <br>
+                    <input type="checkbox" checked>Do You Want To Receive Emails About Our Latest Offers?
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-danger" onclick="document.querySelector('.signupForm').style.display='none'">Cancel</button>
+                </form>
+            </div>
+        </div>
 
     
 </body>

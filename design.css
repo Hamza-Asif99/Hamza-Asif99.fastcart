@@ -252,6 +252,64 @@ body{
     margin-bottom: 1.5rem;
 }
 
+/* Login Form CSS */
+
+  
+
+  /* The Modal (background) */
+  .modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  .modal form{
+    padding: 2rem; border: 1px solid #c9ac08; box-shadow: 0 1px 5px rgba(104, 104, 104,0.8);
+    background-color: rgba(1, 1, 1, 0.7);
+    position: relative;
+  }
+  
+  .loginForm, .signupForm{
+      display: none;
+  }
+
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 5;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  
+
                                 /* Media Queries used simply to change some CSS elements according to screen size.These elements were not possible to manipulate using only Bootstrap Classes. Grid and structuring for different screen sizes is done through only Bootstrap Built In Classes */
 /* Media Queries     */
 
