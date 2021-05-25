@@ -62,28 +62,74 @@ all_item_headings[5].innerHTML = item6.name;
 all_item_descriptions[5].innerHTML = item6.description;
 all_item_prices[5].innerHTML ="$"+ item6.price;
 
-// var anchors = document.querySelectorAll("div.categoriesRow a");
-// for(let i = 0; i< anchors.length;i++){
-//     anchors[i].addEventListener("click",testingJSON);
-// }
+var categoryLI = document.querySelectorAll(".categories ul li a");
+// console.log(categoryLI[0].innerText);
+for(let i =0;i<categoryLI.length;i++){
+    categoryLI[i].addEventListener("click",function(){
+       
+        document.getElementById("mainMenu").style.display = "block";
+        
+        // document.querySelector(".clickToShow").style.display = "block";
+        document.querySelector(".categories").style.display = "none";
+        const text = categoryLI[i].innerText;
+        document.getElementById("h2").innerText = text;
 
-// function testingJSON(){
-
-    
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function() {
-//         if (this.readyState == 4 && this.status == 200) {
-//             // Typical action to be performed when the document is ready:
-//             var  response = JSON.parse(xhttp.responseText);
-//             console.log(response[0].title);
-
-//             var newP= document.createElement("p");
-//             var text = document.createTextNode(response[1].prices);
-
-//             newP.append(text);
+        var uls = document.querySelectorAll(".clickToShow ul");
+        
+        // document.querySelectorAll(".clickToShow ul")[i].style.display="block";
+        
+        // uls[0].style.display = "block";k
+        if(document.getElementById("h2").innerText.localeCompare("Clothing") == 0){
+            // document.querySelector(".ulClothing").style.display = "block";
+            uls[0].style.display = "block";
             
-//         }
-//     };
-//     xhttp.open("GET", "data.json", true);
-//     xhttp.send();
-// }
+
+        }
+        if(document.getElementById("h2").innerText.localeCompare("Electronics") == 0){
+            // document.querySelector(".ulClothing").style.display = "block";
+            uls[1].style.display = "block";
+            
+
+        }
+        if(document.getElementById("h2").innerText.localeCompare("Accessories") == 0){
+            // document.querySelector(".ulClothing").style.display = "block";
+            uls[2].style.display = "block";
+            
+
+        }
+        if(document.getElementById("h2").innerText.localeCompare("Sports") == 0){
+            // document.querySelector(".ulClothing").style.display = "block";
+            uls[3].style.display = "block";
+            
+
+        }
+
+        // // if(categoryLI[i].innerHTML == "Clothing"){
+
+        // // }
+        // if(categoryLI[i].innerText == "Electronics"){
+
+        //     document.querySelector(".clickToShow ul").children[1].style.display = "block";
+        // }
+        // if(categoryLI[i].innerText == "Accessories"){
+
+        //     document.querySelector(".clickToShow ul").children[2].style.display = "block";
+        // }
+        // if(categoryLI[i].innerText == "Sports"){
+
+        //     document.querySelector(".clickToShow ul").children[3].style.display = "block";
+        // }
+    });
+}
+var mainMenu = document.getElementById("mainMenu").addEventListener("click",function(){
+    document.getElementById("mainMenu").style.display = "none";
+    document.getElementById("h2").innerText = "";
+
+    document.querySelector(".categories").style.display = "block";
+    document.querySelectorAll(".clickToShow ul")[0].style.display="none";
+    document.querySelectorAll(".clickToShow ul")[1].style.display="none";
+    document.querySelectorAll(".clickToShow ul")[2].style.display="none";
+    document.querySelectorAll(".clickToShow ul")[3].style.display="none";
+});
+
+

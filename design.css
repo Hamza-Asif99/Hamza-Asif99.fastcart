@@ -40,15 +40,20 @@ body{
 }
 
 
-/* Body CSS */
-
+/* Categories CSS */
+.categories{
+    position: relative;
+}
 .categories a{
-    
     padding: 0.5rem;
     width: 100%;
-    
+    /* position: relative; */
     color: black;
     text-decoration: none;
+}
+.categories li i{
+    position: absolute;
+    right: 15px;
 }
 .categories a:hover{
     color: whitesmoke;
@@ -91,6 +96,17 @@ body{
     background-color: rgba(255,255,255,0.8);
 
 }
+#mainMenu{
+    display: none;
+    margin-bottom: 2rem;
+}
+.clickToShow ul{
+    display: none;
+}
+
+
+
+
 /*  Categories CSS for small and extra small screens */
 
 .categoriesRow h2{
@@ -125,6 +141,9 @@ body{
 .categoriesRow h4{
     margin-bottom: 1.5rem;
 }
+
+
+
 /* Items CSS */
 
 .anchor img{
