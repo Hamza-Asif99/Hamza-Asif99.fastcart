@@ -308,7 +308,34 @@ body{
     to {transform: scale(1)}
   }
   
-  
+  /* Item order page CSS */
+
+  .productDetails{
+      background-color: rgba(1, 1, 1, 0.7) ;
+      position: relative;
+      color: wheat;
+      min-height: 450px;
+      /* margin-top: 2rem; */
+      margin-bottom: 2rem;
+  }
+  .productDetails .btns{
+      position: absolute;
+      left: 5px;
+      
+      bottom: 5px;
+    }
+.btn{
+      background-color: black;
+      color: wheat;
+      margin-left: 5px;
+  }
+  .btn:hover{
+      background-color: white;
+      color: black;
+  }
+  .productImage{
+      margin-bottom: 2rem;
+  }
 
                                 /* Media Queries used simply to change some CSS elements according to screen size.These elements were not possible to manipulate using only Bootstrap Classes. Grid and structuring for different screen sizes is done through only Bootstrap Built In Classes */
 /* Media Queries     */

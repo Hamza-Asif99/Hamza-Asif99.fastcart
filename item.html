@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Clothing</title>
+    <title>Item Display</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="design.css">
 
     <script src="https://kit.fontawesome.com/0793418c64.js" crossorigin="anonymous"></script>
-    <script defer src="categories.js"></script>
+    <script defer src="item.js"></script>
+    <!-- <script  src="categories.js"></script> -->
 </head>
-<body class="gymClothing">
+<body class="itemPage">
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="navMain">
 
@@ -36,7 +37,7 @@
             <!-- </li> -->
             <ul class="navbar-nav active">
                 <li>
-                    <a href="#" class="nav-link" onclick="document.querySelector('.loginForm ').style.display='block'" >Login</a>
+                    <a href="#" class="nav-link" onclick="document.querySelector('.loginForm ').style.display='block'">Login</a>
                 </li>
                 <li>
                     <a href="#" class="nav-link" onclick="document.querySelector('.signupForm ').style.display='block'">SignUp</a>
@@ -48,101 +49,31 @@
             </ul>
         </div>
     </nav>
+
     <div class="container itemsDisplay">
         <div class="center text-center">
 
-            <h3>Welcome To Gym Clothing</h3>
+            <h3>Order Now !</h3>
         </div>
         <div class="row">
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
+            <div class="col-12 col-lg-4 text-center productImage">
+                <img id="productImage" src="" alt="Image of The Item">
+            </div>
+            <div class="col-12 offset-lg-1 col-lg-6 productDetails ">
+                <div>
 
-                        <img src="" id="images" alt="Item display">
-                        <div class="details">
-
-                            <h2></h2>
-                            <span></span>
-                        </div>
-                    </a>
-                    <p></p>
-
+                    <h3 id="productTitle"></h3>
+                    <h4 id="productPrice"></h4>
+                </div>
+                <div class="btns">
+                    <button class="btn">Add To Cart</button>
+    
+                    <button class="btn">Add To WishList</button>
                 </div>
             </div>
-
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
-
-                        <img src="" id="images" alt="Item display">
-                        <div class="details">
-
-                            <h2></h2>
-                            <span></span>
-                        </div>
-                    </a>
-                    <p></p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
-
-                        <img src="" id="images" alt="Item display">
-                        <div class="details">
-
-                            <h2></h2>
-                            <span></span>
-                        </div>
-                    </a>
-                    <p></p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
-
-                        <img src="" id="images" alt="Item display">
-                        <div class="details">
-
-                            <h2></h2>
-                            <span></span>
-                        </div>
-                    </a>
-                    <p></p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
-
-                        <img src="" id="images" alt="Item display">
-                        <div class="details">
-
-                            <h2></h2>
-                            <span></span>
-                        </div>
-                    </a>
-                    <p></p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
-
-                        <img src="" id="images" alt="Item display">
-                        <div class="details">
-
-                            <h2></h2>
-                            <span></span>
-                        </div>
-                    </a>
-                    <p></p>
-                </div>
-            </div>
-            
         </div>
     </div>
+    
     <div class="container-fluid text-light">
         <footer class="footer">
             <div class="row" >
@@ -245,5 +176,6 @@
                 </form>
             </div>
         </div>
+
 </body>
 </html>
