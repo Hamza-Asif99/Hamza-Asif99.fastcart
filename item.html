@@ -57,13 +57,16 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-4 text-center productImage">
-                <img id="productImage" src="" alt="Image of The Item">
+                <img id="productImage" src="" width="100%" alt="Image of The Item">
             </div>
-            <div class="col-12 offset-lg-1 col-lg-6 productDetails ">
+            <div class="col-12 offset-lg-1 col-lg-7 productDetails ">
                 <div>
 
-                    <h3 id="productTitle"></h3>
-                    <h4 id="productPrice"></h4>
+                    <h3 style="color: gold;" id="productTitle"></h3>
+                    <h4 style="color: gold;" id="productPrice"></h4>
+                    <h4 style="color: gold;">Description</h2>
+
+                    <p style="color: wheat;" id="description"></p>
                 </div>
                 <div class="btns">
                     <button class="btn">Add To Cart</button>
@@ -72,6 +75,13 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                
+            </div>
+        </div>
+
     </div>
     
     <div class="container-fluid text-light">
@@ -96,10 +106,10 @@
                 <div class="col-12 col-sm-4 center-items text-center">
                     <h4>Menu</h4>
                     <ul >
-                        <li>Home</li>
-                        <li>Login</li>
-                        <li>Sign Up</li>
-                        <li>Help Desk</li>
+                        <li><a  href="index.html">Home</a></li>
+                        <li><a href="#"onclick="document.querySelector('.loginForm ').style.display='block'">Login</a></li>
+                        <li><a href="#" onclick="document.querySelector('.signupForm ').style.display='block'">Sign Up</a></li>
+                        <li><a href="helpDesk.html">Help Desk</a></li>
                         
                     </ul>
                 </div>
@@ -109,7 +119,7 @@
     </div>
     <div class="loginForm">
 
-        <div class="paretnDiv modal text-center" style="display: flex; justify-content: center;">
+        <div class="paretnDiv modal animate text-center" style="display: flex; justify-content: center;">
 
             <div style="width: 65%;">
                 
@@ -123,7 +133,7 @@
                     </div>
                     <div class="form-group">
                         <label for="gpa">Enter Password</label>
-                        <input type="text" id="gpa" class="form-control" placeholder="Password">
+                        <input type="password" id="gpa" class="form-control" placeholder="Password">
                         
                     </div>
                     <div class="text-center" >
@@ -142,7 +152,7 @@
 
     <div class="signupForm">
 
-        <div class="paretnDiv modal text-center " style="display:flex; justify-content: center"  >
+        <div class="paretnDiv modal animate text-center " style="display:flex; justify-content: center"  >
 
             <div style="width: 65%;">
                 
@@ -153,19 +163,19 @@
                         <label for="pass">Enter Name</label>
                         <input type="text"  class="form-control" placeholder="Name">
                         <label >Enter Email</label>
-                        <input type="text" class="form-control" placeholder="Name">
+                        <input type="email" class="form-control" placeholder="Email">
                         <small>We Will Never Share This With Anyone</small>
                         
                     </div>
                     <div class="form-group">
                         <label for="gpa">Enter Password</label>
-                        <input type="text"  class="form-control" placeholder="Password">
+                        <input type="password"  class="form-control" placeholder="Password">
                         <label for="gpa">Confirm Password</label>
-                        <input type="text"  class="form-control" placeholder="Password">
+                        <input type="password"  class="form-control" placeholder="Confirm Password">
                         
                     </div>
                     <div class="text-center" >
-                        <button type="button"  class="btn btn-info">Login</button>
+                        <button type="button"  class="btn btn-info">Sign Up</button>
                         <!-- <button type="submit" id="event2" class="btn btn-warning">Forgot Password?</button> -->
                     </div>
                     <br>

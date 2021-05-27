@@ -234,6 +234,9 @@ body{
     align-items: center;
     margin: 0px;
 }
+.footer a{
+    color: lightgray;
+}
 .center-items{
     display: grid;
     place-content: center;
@@ -252,7 +255,7 @@ body{
     margin-bottom: 1.5rem;
 }
 
-/* Login Form CSS */
+/* Login and Sign Up Forms CSS */
 
   
 
@@ -326,7 +329,7 @@ body{
     }
 .btn{
       background-color: black;
-      color: wheat;
+      color: gold;
       margin-left: 5px;
   }
   .btn:hover{

@@ -20,6 +20,8 @@ if(checkFile.getAttribute("class") == "mensFashion"){
                     localStorage.setItem("image",response[0][i].images);
                     localStorage.setItem("title",response[0][i].title);
                     localStorage.setItem("price","$"+response[0][i].prices);
+                    localStorage.setItem("description",response[0][i].description);
+
                 })
 
             }
@@ -45,6 +47,8 @@ if(checkFile.getAttribute("class") == "womensFashion"){
                     localStorage.setItem("image",response[1][i].shoeImages);
                     localStorage.setItem("title",response[1][i].shoeTItles);
                     localStorage.setItem("price","$"+response[1][i].shoePRices);
+                    localStorage.setItem("description",response[1][i].description);
+
                 })
             }
         }
@@ -68,6 +72,8 @@ if(checkFile.getAttribute("class") == "gymClothing"){
                     localStorage.setItem("image",response[2][i].image);
                     localStorage.setItem("title",response[2][i].title);
                     localStorage.setItem("price","$"+response[2][i].price);
+                    localStorage.setItem("description",response[2][i].description);
+
                 })
             }
         }
@@ -91,6 +97,8 @@ if(checkFile.getAttribute("class") == "computers"){
                     localStorage.setItem("image",response[3][i].image);
                     localStorage.setItem("title",response[3][i].title);
                     localStorage.setItem("price","$"+response[3][i].price);
+                    localStorage.setItem("description",response[3][i].description);
+
                 })
             }
         }
@@ -114,6 +122,8 @@ if(checkFile.getAttribute("class") == "monitors"){
                     localStorage.setItem("image",response[4][i].image);
                     localStorage.setItem("title",response[4][i].title);
                     localStorage.setItem("price","$"+response[4][i].price);
+                    localStorage.setItem("description",response[4][i].description);
+
                 })
             }
         }
@@ -137,6 +147,8 @@ if(checkFile.getAttribute("class") == "phones"){
                     localStorage.setItem("image",response[5][i].image);
                     localStorage.setItem("title",response[5][i].title);
                     localStorage.setItem("price","$"+response[5][i].price);
+                    localStorage.setItem("description",response[5][i].description);
+
                 })
             }
         }
@@ -160,6 +172,8 @@ if(checkFile.getAttribute("class") == "petFood"){
                     localStorage.setItem("image",response[6][i].image);
                     localStorage.setItem("title",response[6][i].title);
                     localStorage.setItem("price","$"+response[6][i].price);
+                    localStorage.setItem("description",response[6][i].description);
+
                 })
             }
         }
@@ -183,6 +197,8 @@ if(checkFile.getAttribute("class") == "petToys"){
                     localStorage.setItem("image",response[7][i].image);
                     localStorage.setItem("title",response[7][i].title);
                     localStorage.setItem("price","$"+response[7][i].price);
+                    localStorage.setItem("description",response[7][i].description);
+
                 })
             }
         }
@@ -206,6 +222,8 @@ if(checkFile.getAttribute("class") == "hikingGear"){
                     localStorage.setItem("image",response[8][i].image);
                     localStorage.setItem("title",response[8][i].title);
                     localStorage.setItem("price","$"+response[8][i].price);
+                    localStorage.setItem("description",response[8][i].description);
+
                 })
             }
         }
@@ -229,6 +247,7 @@ if(checkFile.getAttribute("class") == "gymEquipment"){
                     localStorage.setItem("image",response[9][i].image);
                     localStorage.setItem("title",response[9][i].title);
                     localStorage.setItem("price","$"+response[9][i].price);
+                    localStorage.setItem("description",response[9][i].description);
                 })
             }
         }
