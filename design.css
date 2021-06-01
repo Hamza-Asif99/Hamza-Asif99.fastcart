@@ -340,6 +340,45 @@ body{
       margin-bottom: 2rem;
   }
 
+/* Help Desk Page CSS */
+.faqs{
+   background-color: rgba(1, 1, 1, 0.7) ;
+   padding: 2rem;
+   margin-bottom: 1.5rem;
+   color: gold;
+   
+}
+.answer{
+    display: none;
+}
+.question,.answer{
+    border: 1px solid #c9ac08; 
+    margin: 1rem;
+    position: relative;
+    padding: 1rem;
+
+}
+.question h4{
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline;
+    margin-right: 5px;
+    
+}
+.question i{
+    position: absolute;
+    right: 5px;
+    /* top: 5px; */
+    margin-left: 5px;
+}
+
+.submitTicket{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: rgba(1, 1, 1, 0.7);
+}
+
+
                                 /* Media Queries used simply to change some CSS elements according to screen size.These elements were not possible to manipulate using only Bootstrap Classes. Grid and structuring for different screen sizes is done through only Bootstrap Built In Classes */
 /* Media Queries     */
 
