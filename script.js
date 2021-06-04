@@ -2,14 +2,15 @@
 var allImages = document.querySelectorAll(".anchor img")
 var allTitles = document.querySelectorAll(".anchor h2");
 var allDescriptions = document.querySelectorAll(".item p");
-var allPrices= document.querySelectorAll(".anchor span");
-let allAnchors = document.querySelectorAll(".anchor")
-
+var allPrices= document.querySelectorAll(".anchor span");  //This script puts some default items on the home page.
+let allAnchors = document.querySelectorAll(".anchor")      // It also allows interactivity with the page where user can navigate through
+                                                           // the categories section on the left hand side. 
+                                                           // Belongs to index.html
 var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var  response = JSON.parse(xhttp.responseText);
-            console.log(response[10].length);
+            // console.log(response[10].length);
             for(let i = 0; i < response[10].length;i++){
                 allImages[i].setAttribute("src",response[10][i].image);
                 allTitles[i].innerText = response[10][i].title; 
@@ -29,47 +30,36 @@ var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "data.json", true);
     xhttp.send();
 
+var categoryLI = document.querySelectorAll(".desktopView ul li a");
+var smallScreen = document.querySelectorAll(".smallView ul li a");
 
-var categoryLI = document.querySelectorAll(".categories ul li a");
-// console.log(categoryLI[0].innerText);
+for(let i = 0; i < smallScreen.length; i++){
+    smallScreen[i].addEventListener("click",function(){
+        localStorage.setItem("toLoad",smallScreen[i].innerText)
+        
+    })
+}
 for(let i =0;i<categoryLI.length;i++){
     categoryLI[i].addEventListener("click",function(){
        
         document.getElementById("mainMenu").style.display = "block";
-        
-        // document.querySelector(".clickToShow").style.display = "block";
         document.querySelector(".categories").style.display = "none";
         const text = categoryLI[i].innerText;
         document.getElementById("h2").innerText = text;
 
         var uls = document.querySelectorAll(".clickToShow ul");
-        
-        // document.querySelectorAll(".clickToShow ul")[i].style.display="block";
-        
-        // uls[0].style.display = "block";k
-        if(document.getElementById("h2").innerText.localeCompare("Clothing") == 0){
-            // document.querySelector(".ulClothing").style.display = "block";
-            uls[0].style.display = "block";
-            
 
+        if(document.getElementById("h2").innerText.localeCompare("Clothing") == 0){
+            uls[0].style.display = "block";            
         }
         if(document.getElementById("h2").innerText.localeCompare("Electronics") == 0){
-            // document.querySelector(".ulClothing").style.display = "block";
             uls[1].style.display = "block";
-            
-
         }
-        if(document.getElementById("h2").innerText.localeCompare("Accessories") == 0){
-            // document.querySelector(".ulClothing").style.display = "block";
+        if(document.getElementById("h2").innerText.localeCompare("Pets") == 0){
             uls[2].style.display = "block";
-            
-
         }
-        if(document.getElementById("h2").innerText.localeCompare("Sports") == 0){
-            // document.querySelector(".ulClothing").style.display = "block";
+        if(document.getElementById("h2").innerText.localeCompare("Outdoors") == 0){
             uls[3].style.display = "block";
-            
-
         }
 
     });
@@ -84,7 +74,3 @@ var mainMenu = document.getElementById("mainMenu").addEventListener("click",func
     document.querySelectorAll(".clickToShow ul")[2].style.display="none";
     document.querySelectorAll(".clickToShow ul")[3].style.display="none";
 });
-
-
-
-

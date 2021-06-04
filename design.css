@@ -81,17 +81,16 @@ body{
 }
 
 
-.img{
-    
+/* .img{   
     text-align: center;
-}
-.image{
+} */
+/* .image{
     width: 100%;
-}
-.bodyStarts{
+} */
+/* .bodyStarts{
     padding: 2rem 0rem;
     
-}
+} */
 .bodyDiv{
     background-color: rgba(255,255,255,0.8);
 
@@ -104,25 +103,8 @@ body{
     display: none;
 }
 
-
-
-
 /*  Categories CSS for small and extra small screens */
 
-.categoriesRow h2{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto; 
-    margin-bottom: 1rem;
-    text-align: center;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid black;
-    
-    
-}
-.center h4, .center ul,.center li{
-    text-align: center;
-}
 .categoriesRow li, ul{
     list-style-type: none;
     padding: 0px;
@@ -138,12 +120,6 @@ body{
     color: whitesmoke;
 
 }
-.categoriesRow h4{
-    margin-bottom: 1.5rem;
-}
-
-
-
 /* Items CSS */
 
 .anchor img{
@@ -156,9 +132,7 @@ body{
     text-align: left;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    /* margin-bottom: 22rem; */
-    /* width: 10rem; */
-    /* height: 15rem; */
+
 }
 .item h2{
     font-size: 19px;
@@ -193,8 +167,6 @@ body{
 
 /* About Us CSS (what is FastCart>)  */
 .aboutUS{
-    /* margin-top: 1rem; */
-    margin-bottom: 1rem;
     background-color:rgba(255,255,255,0.8);
 }
 .placement{
@@ -202,27 +174,13 @@ body{
     place-content: center;
     min-height: 500px;
 }
-.aboutUS .row div{
-    text-align: center;
-   
-    margin-bottom: 0.5rem;
-    /* margin-top: 0.5rem; */
-    
-}
 .aboutUS button{
-    background-color: white;
-    border-radius:30px;
-    padding: 0.8rem;
     outline: none;
 }
 .aboutUS button:hover{
-    /* background-color: black; */
-    /* color: white; */
     width: 200px;
 }
-.bottom-row button{
-    margin-top: 2rem;
-}
+
 
 /* Footer CSS */
 

@@ -1,10 +1,8 @@
 function readData(){
-    // var image = getCookie("img");
-    // var title = getCookie("title");
-    // var price = getCookie("price");
-    // console.log(data);
-    var image = localStorage.getItem("image");
-    var title = localStorage.getItem("title");
+
+    var image = localStorage.getItem("image");      //This file takes data from localStorage and shows the specific item the 
+    var title = localStorage.getItem("title");      // user clicked on. 
+                                                    // Belongs to items.html
     var price = localStorage.getItem("price");
     var description = localStorage.getItem("description");
 
@@ -12,11 +10,6 @@ function readData(){
     document.getElementById("productTitle").innerText = title;
     document.getElementById("productPrice").innerText = price;
     document.getElementById("description").innerText = description;
-
-    // localStorage.setItem("img",0);
-    // localStorage.setItem("title",0);
-    // localStorage.setItem("price",0);
-
 }
 
 readData();

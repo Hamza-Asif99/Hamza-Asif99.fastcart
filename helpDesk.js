@@ -2,9 +2,10 @@ var numOfQuestions = document.querySelectorAll(".question").length;
 var allQuestions = document.querySelectorAll(".question");
 var allAnswers = document.querySelectorAll(".answer");
 var allIconsUp = document.querySelectorAll(".up");
-var allIconsDown = document.querySelectorAll(".down");
-
-var toggle= [];
+var allIconsDown = document.querySelectorAll(".down");    //This file adds some interactivity with the help desk page
+                                                        // it is mainly used for the FAQ section. User can click to show or hide the answer
+var toggle= [];                                         // to the written questions.
+                                                        // Belongs to helpDesk.html
 for(let i = 0;i<numOfQuestions; i++){
     toggle[i] = false;
 }

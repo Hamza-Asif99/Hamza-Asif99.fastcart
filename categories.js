@@ -1,11 +1,13 @@
 let checkFile = document.getElementsByTagName("body")[0];
 let allImages = document.querySelectorAll(".anchor img");
-let allTitles = document.querySelectorAll(".anchor h2");
-let allPrices = document.querySelectorAll(".anchor span")
+let allTitles = document.querySelectorAll(".anchor h2");     //This script pulls data from the JSON file and onto the categories page
+let allPrices = document.querySelectorAll(".anchor span")   // Belongs to categories.html
 let allAnchors = document.querySelectorAll(".anchor")
 
-if(checkFile.getAttribute("class") == "mensFashion"){
-    console.log(allAnchors[0].innerHTML);
+let categoryToShow = localStorage.getItem("toLoad");
+
+if(categoryToShow == "Men's Fashion"){
+    document.getElementById("pageTitle").innerText = "Welcome To Men's Fashion";
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -31,7 +33,9 @@ if(checkFile.getAttribute("class") == "mensFashion"){
     xhttp.send();
 }
 
-if(checkFile.getAttribute("class") == "womensFashion"){
+if(categoryToShow == "Women's Fashion"){
+    document.getElementById("pageTitle").innerText = "Welcome To Women's Fashion";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -56,7 +60,9 @@ if(checkFile.getAttribute("class") == "womensFashion"){
     xhttp.open("GET", "data.json", true);
     xhttp.send();
 }
-if(checkFile.getAttribute("class") == "gymClothing"){
+if(categoryToShow == "Gym Clothing"){
+    document.getElementById("pageTitle").innerText = "Break A Sweat";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -81,7 +87,9 @@ if(checkFile.getAttribute("class") == "gymClothing"){
     xhttp.open("GET", "data.json", true);
     xhttp.send();
 }
-if(checkFile.getAttribute("class") == "computers"){
+if(categoryToShow == "Computers"){
+    document.getElementById("pageTitle").innerText = "Welcome To The World Of Power";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -106,7 +114,9 @@ if(checkFile.getAttribute("class") == "computers"){
     xhttp.open("GET", "data.json", true);
     xhttp.send();
 }
-if(checkFile.getAttribute("class") == "monitors"){
+if(categoryToShow == "Monitor"){
+    document.getElementById("pageTitle").innerText = "Cutting Edge Displays";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -131,7 +141,9 @@ if(checkFile.getAttribute("class") == "monitors"){
     xhttp.open("GET", "data.json", true);
     xhttp.send();
 }
-if(checkFile.getAttribute("class") == "phones"){
+if(categoryToShow == "Phone"){
+    document.getElementById("pageTitle").innerText = "The Best Phones On The Market";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -156,7 +168,9 @@ if(checkFile.getAttribute("class") == "phones"){
     xhttp.open("GET", "data.json", true);
     xhttp.send();
 }
-if(checkFile.getAttribute("class") == "petFood"){
+if(categoryToShow == "Pet Food"){
+    document.getElementById("pageTitle").innerText = "Nutrients For Your Fluffy Companions";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -181,7 +195,9 @@ if(checkFile.getAttribute("class") == "petFood"){
     xhttp.open("GET", "data.json", true);
     xhttp.send();
 }
-if(checkFile.getAttribute("class") == "petToys"){
+if(categoryToShow == "Pet Toys"){
+    document.getElementById("pageTitle").innerText = "Fun Toys For Your Fluffy Companions";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -206,7 +222,9 @@ if(checkFile.getAttribute("class") == "petToys"){
     xhttp.open("GET", "data.json", true);
     xhttp.send();
 }
-if(checkFile.getAttribute("class") == "hikingGear"){
+if(categoryToShow == "Hiking Gear"){
+    document.getElementById("pageTitle").innerText = "Conquer The Trail";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -231,7 +249,9 @@ if(checkFile.getAttribute("class") == "hikingGear"){
     xhttp.open("GET", "data.json", true);
     xhttp.send();
 }
-if(checkFile.getAttribute("class") == "gymEquipment"){
+if(categoryToShow == "Gym Equipment"){
+    document.getElementById("pageTitle").innerText = "Let The Gains Begin";
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
