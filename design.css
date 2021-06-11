@@ -7,39 +7,24 @@ body{
     background-repeat: no-repeat;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 /* Navigation Bar CSS */
-/* .navMain, .navItems{
-    width: 30%;
-    
-} */
 .navbar{
     background-color: rgba(1, 1, 1, 0.8);
-
 }
-
 .search{
-    width: 50%;
     display: flex;
     height: 1.5rem;
 }
-
 .navItems ul{
     margin-left: auto;
 }
 .search button{
     background-color:rgba(1, 1, 1, 0.4);
-    color: white;
-    border: none;
     outline: none;
 }
-
 .search input{
-    width: 100%;
     outline: none;
 }
-
-
 /* Categories CSS */
 .categories{
     position: relative;
@@ -47,7 +32,6 @@ body{
 .categories a{
     padding: 0.5rem;
     width: 100%;
-    /* position: relative; */
     color: black;
     text-decoration: none;
 }
@@ -57,8 +41,7 @@ body{
 }
 .categories a:hover{
     color: whitesmoke;
-    background-color: rgba(1, 1, 1, 0.2);
-    
+    background-color: rgba(1, 1, 1, 0.2);   
 }
 .categories ul, li{
     padding: 0px;
@@ -79,21 +62,8 @@ body{
     align-items:center;
     justify-items: center;
 }
-
-
-/* .img{   
-    text-align: center;
-} */
-/* .image{
-    width: 100%;
-} */
-/* .bodyStarts{
-    padding: 2rem 0rem;
-    
-} */
 .bodyDiv{
     background-color: rgba(255,255,255,0.8);
-
 }
 #mainMenu{
     display: none;
@@ -102,29 +72,23 @@ body{
 .clickToShow ul{
     display: none;
 }
-
 /*  Categories CSS for small and extra small screens */
-
 .categoriesRow li, ul{
     list-style-type: none;
     padding: 0px;
 }
 .categoriesRow a{
     text-decoration: none;
-    
     padding: 0.5rem 0rem;
     color: black;
 }
 .categoriesRow a:hover{
     background-color: rgba(1, 1, 1, 0.2);
     color: whitesmoke;
-
 }
 /* Items CSS */
-
 .anchor img{
     width: 100%;
-    /* height: 100%; */
 }
 .item{
     padding: 0.5rem;
@@ -132,25 +96,19 @@ body{
     text-align: left;
     margin-top: 1rem;
     margin-bottom: 1rem;
-
 }
 .item h2{
     font-size: 19px;
     padding: 0.5rem;
     margin-top: 0.2rem;
     color: black;
-    font-weight: bold;
-    
+    font-weight: bold;   
 }
-
 .itemsDisplay div.center, .fastCart{
-    /* width: 30%; */
     display: grid;
     place-content: center;
     margin: 0.5rem;
     padding: 1rem;
-    /* margin-right: auto; */
-    /* text-align: center; */
     background-color: rgba(255,255,255,0.8) ;
 }
 .item a{
@@ -164,7 +122,6 @@ body{
     align-items: center;
     justify-content: space-between;
 }
-
 /* About Us CSS (what is FastCart>)  */
 .aboutUS{
     background-color:rgba(255,255,255,0.8);
@@ -180,10 +137,7 @@ body{
 .aboutUS button:hover{
     width: 200px;
 }
-
-
 /* Footer CSS */
-
 .footer{
     background-color: rgba(1, 1, 1, 0.8) ;
     padding: 3rem;
@@ -205,24 +159,17 @@ body{
 .icons i{
     margin-right: 0.5rem;
 }
-
 .footer i, p,li{
     color: lightslategrey;
 }
 .footer .row div{
     margin-bottom: 1.5rem;
 }
-
 /* Login and Sign Up Forms CSS */
-
-  
-
-  /* The Modal (background) */
   .modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
@@ -232,12 +179,9 @@ body{
     background-color: rgba(1, 1, 1, 0.7);
     position: relative;
   }
-  
   .loginForm, .signupForm{
       display: none;
   }
-
-  
   /* The Close Button (x) */
   .close {
     position: absolute;
@@ -247,42 +191,34 @@ body{
     font-size: 20px;
     font-weight: bold;
   }
-  
   .close:focus {
     color: red;
     cursor: pointer;
   }
-  
   /* Add Zoom Animation */
   .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
   }
-  
   @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
     to {-webkit-transform: scale(1)}
   }
-    
   @keyframes animatezoom {
     from {transform: scale(0)} 
     to {transform: scale(1)}
   }
-  
   /* Item order page CSS */
-
   .productDetails{
       background-color: rgba(1, 1, 1, 0.7) ;
       position: relative;
       color: wheat;
       min-height: 450px;
-      /* margin-top: 2rem; */
       margin-bottom: 2rem;
   }
   .productDetails .btns{
       position: absolute;
-      left: 5px;
-      
+      left: 5px;   
       bottom: 5px;
     }
 .btn{
@@ -297,14 +233,12 @@ body{
   .productImage{
       margin-bottom: 2rem;
   }
-
 /* Help Desk Page CSS */
 .faqs{
    background-color: rgba(1, 1, 1, 0.7) ;
    padding: 2rem;
    margin-bottom: 1.5rem;
    color: gold;
-   
 }
 .answer{
     display: none;
@@ -314,14 +248,12 @@ body{
     margin: 1rem;
     position: relative;
     padding: 1rem;
-
 }
 .question h4{
     font-size: 1.1rem;
     font-weight: bold;
     display: inline;
-    margin-right: 5px;
-    
+    margin-right: 5px;   
 }
 .question i{
     position: absolute;
@@ -329,14 +261,11 @@ body{
     /* top: 5px; */
     margin-left: 5px;
 }
-
 .submitTicket{
     margin-bottom: 1rem;
     padding: 1rem;
     background-color: rgba(1, 1, 1, 0.7);
 }
-
-
                                 /* Media Queries used simply to change some CSS elements according to screen size.These elements were not possible to manipulate using only Bootstrap Classes. Grid and structuring for different screen sizes is done through only Bootstrap Built In Classes */
 /* Media Queries     */
 

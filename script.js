@@ -1,11 +1,42 @@
 
-var allImages = document.querySelectorAll(".anchor img")
-var allTitles = document.querySelectorAll(".anchor h2");
-var allDescriptions = document.querySelectorAll(".item p");
-var allPrices= document.querySelectorAll(".anchor span");  //This script puts some default items on the home page.
-let allAnchors = document.querySelectorAll(".anchor")      // It also allows interactivity with the page where user can navigate through
+var allImages = document.querySelectorAll(".anchors img")
+var allTitles = document.querySelectorAll(".anchors h2");
+var allDescriptions = document.querySelectorAll(".popItem p");
+var allPrices= document.querySelectorAll(".anchors span");  //This script puts some default items on the home page.
+let allAnchors = document.querySelectorAll(".anchor") 
+let popRightNow = document.querySelectorAll(".anchors")                                                             // It also allows interactivity with the page where user can navigate through
                                                            // the categories section on the left hand side. 
                                                            // Belongs to index.html
+
+function latestSearches(image,title,price,description){
+ 
+        let changeNow = Math.floor(Math.random() * 10);
+
+        localStorage.setItem("latestChange",changeNow);
+        
+        if(localStorage.getItem("latestImage1")==null || localStorage.getItem("latestChange") < 3){
+            
+            localStorage.setItem("latestImage1",image);
+            localStorage.setItem("latestTitle1",title);
+            localStorage.setItem("latestPrice1",price);
+            // localStorage.setItem("latestDesc1",description);
+            
+        }
+        if(localStorage.getItem("latestImage2") == null || localStorage.getItem("latestChange") >= 3 && localStorage.getItem("latestChange") < 7  ){
+            
+            localStorage.setItem("latestImage2",image);
+            localStorage.setItem("latestTitle2",title);
+            localStorage.setItem("latestPrice2",price);
+            // localStorage.setItem("latestDesc2",description);
+        }
+        if(localStorage.getItem("latestImage3") == null || localStorage.getItem("latestChange") >= 7 ){
+            
+            localStorage.setItem("latestImage3",image);
+            localStorage.setItem("latestTitle3",title);
+            localStorage.setItem("latestPrice3",price);
+            // localStorage.setItem("latestDesc3",description);
+        }
+}
 var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -17,11 +48,20 @@ var xhttp = new XMLHttpRequest();
                 allPrices[i].innerText ="$"+ response[10][i].price;
                 allDescriptions[i].innerText =response[10][i].description;
 
-                allAnchors[i].addEventListener("click",function(){
+                // allAnchors[i].addEventListener("click",function(){
+                //     localStorage.setItem("image",response[10][i].image);
+                //     localStorage.setItem("title",response[10][i].title);
+                //     localStorage.setItem("price","$"+response[10][i].price);
+                //     localStorage.setItem("description",response[10][i].description);
+                //     // latestSearches(response[10][i].image,response[10][i].title,"$"+response[10][i].price,response[10][i].description)
+                // })
+
+                popRightNow[i].addEventListener("click",function(){
                     localStorage.setItem("image",response[10][i].image);
                     localStorage.setItem("title",response[10][i].title);
                     localStorage.setItem("price","$"+response[10][i].price);
                     localStorage.setItem("description",response[10][i].description);
+                    latestSearches(response[10][i].image,response[10][i].title,"$"+response[10][i].price,response[10][i].description)
                 })
 
             }

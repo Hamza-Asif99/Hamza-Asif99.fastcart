@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="design.css">
+
+    <script src="https://kit.fontawesome.com/0793418c64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="navMain">
+
+            <a href="index.html" class="navbar-brand"><i class="fas fa-store" aria-hidden="true"></i>
+                <span>FastCart</span></a>
+            
+        </div>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navSupportedContent" class="collapse navbar-collapse navItems">
+            <div class="search d-flex w-50">
+
+                <input class="input w-100"  type="text" placeholder="Search">
+                <button type="submit" class="bg-dark text-light border-0"><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="navbar-nav active">
+                <li>
+                    <a href="#" class="nav-link" onclick="document.querySelector('.loginForm ').style.display='block'" >Login</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" onclick="document.querySelector('.signupForm ').style.display='block'">SignUp</a>
+                </li>
+                <li>
+                    
+                    <a href="shoppingCart.html" target="" id="cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container itemsDisplay">
+        <div class="center text-center">
+            <h3>Add items to your cart !</h3>
+
+        </div>        
+
+        <div class="row categoriesRow">
+            <div class="col-12 item">
+                <h4>Cart Is Empty</h4>
+                <p class="text-dark">Your shopping cart lives to serve, give it purpose and add items to buy.
+                    <br><br> For inspiration, browse the categories below, or just revisit your latest searches.
+                </p>
+            </div>
+            <br>
+            <!-- <div class="col-12">
+                <div class="center text-center">
+                    <h3>Categories</h3>
+        
+                </div>   
+            </div> -->
+            <div class="col-6 col-sm-3 item text-center">
+                <h2>Clothing</h2>
+                <ul class="ulClothing">
+                    <li><a class="p-2" href="categories.html">Men's Fashion</a></li>
+                    <li><a class="p-2" href="categories.html">Women's Fashion</a></li>
+                    <li><a class="p-2" href="categories.html">Gym Clothing</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-sm-3 item text-center">
+                <h2>Electronics</h2>
+                <ul class="ulElectronics">
+                    <li><a class="p-2" href="categories.html">Phone</a></li>
+                    <li><a class="p-2" href="categories.html">Computers</a></li>
+                    <li><a class="p-2" href="categories.html">Monitor</a></li>
+                </ul>                
+            </div>
+            <div class="col-6 col-sm-3 item text-center">
+                <h2>Pets</h2>
+                <ul class="ulClothing">
+                    <li><a class="p-2" href="categories.html">Pet Toys</a></li>
+                    <li><a class="p-2" href="categories.html">Pet Food</a></li>
+                </ul>                
+            </div>
+            <div class="col-6 col-sm-3 item text-center">
+                <h2>Outdoors</h2>
+                <ul class="ulClothing">
+                    <li><a class="p-2" href="categories.html">Hiking Gear</a></li>
+                    <li><a class="p-2" href="categories.html">Gym Equipment</a></li>
+                </ul>                
+            </div>
+        </div>
+        
+    </div>
+    <div class="container itemsDisplay " id="latestSearchDiv">
+        <div class="center text-center">
+
+            <h3>Your Latest Searches</h3>
+        </div>
+        <div class="row categoriesRow">
+            <div class="col-12 item">
+                <p class="text-dark">Browse around to see your latest searches here.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container itemsDisplay" id="latestSearchDiv2" style="display: none;">
+        <div class="center text-center">
+
+            <h3>Your Latest Searches</h3>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="item">
+                    <div  class="anchor">
+
+                        <img src="" id="images" class="w-100" alt="Item display">
+                        <div class="details">
+
+                            <h2></h2>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p></p>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4" id="item2">
+                <div class="item">
+                    <div class="anchor">
+
+                        <img src="" id="images" class="w-100" alt="Item display">
+                        <div class="details">
+
+                            <h2></h2>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4" id="item3" >
+                <div class="item">
+                    <div class="anchor">
+
+                        <img src="" id="images" class="w-100" alt="Item display">
+                        <div class="details">
+
+                            <h2></h2>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    <div class="container-fluid text-light">
+        <footer class="footer">
+            <div class="row" >
+                <div class="col-12 col-sm-4 center-items">
+                    
+
+                        <h3 class="bold-text">FastCart</h3>
+                        <div class="icons">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-linkedin-square"></i>       
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-instagram"></i>
+                        </div>
+                    
+                </div>
+                <div class="col-12 col-sm-4 center-items text-center">
+                    <h4>Address</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, at.</p>
+                </div>
+                <div class="col-12 col-sm-4 center-items text-center">
+                    <h4>Menu</h4>
+                    <ul >
+                        <li><a  href="index.html">Home</a></li>
+                        <li><a href="#"onclick="document.querySelector('.loginForm ').style.display='block'">Login</a></li>
+                        <li><a href="#" onclick="document.querySelector('.signupForm ').style.display='block'">Sign Up</a></li>
+                        <li><a href="helpDesk.html">Help Desk</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+        </footer>
+    </div>
+
+    <script>
+        var anchors = document.querySelectorAll(".item ul li a");
+
+        for(let i = 0; i < anchors.length; i++){
+            anchors[i].addEventListener("click",function(){
+            localStorage.setItem("toLoad",anchors[i].innerText)
+        
+        })
+        }
+        // let arr = localStorage.getItem("latestSearches");
+        let allImages = document.querySelectorAll(".anchor img");
+        let allTitles = document.querySelectorAll(".anchor h2");     //This script pulls data from the JSON file and onto the categories page
+        let allPrices = document.querySelectorAll(".anchor span")
+        let allDescriptions = document.querySelectorAll(".item p")
+
+        allImages[0].setAttribute("src",localStorage.getItem("latestImage1"))
+        allTitles[0].innerText = localStorage.getItem("latestTitle1")
+        allPrices[0].innerText = localStorage.getItem("latestPrice1")
+        // allDescriptions[0].innerText = localStorage.getItem("latestDesc1")
+
+        if(localStorage.getItem("latestImage2")!=null){
+            allImages[1].setAttribute("src",localStorage.getItem("latestImage2"))   
+            allTitles[1].innerText = localStorage.getItem("latestTitle2")
+            allPrices[1].innerText = localStorage.getItem("latestPrice2")
+            // allDescriptions[1].innerText = localStorage.getItem("latestDesc2")
+        }
+        if(localStorage.getItem("latestImage3")!=null){
+            allImages[2].setAttribute("src",localStorage.getItem("latestImage3"))
+            allTitles[2].innerText = localStorage.getItem("latestTitle3")
+            allPrices[2].innerText = localStorage.getItem("latestPrice3")
+            document.getElementById("latestSearchDiv").style.display = "none"
+            document.getElementById("latestSearchDiv2").style.display = "block"
+            // allDescriptions[2].innerText = localStorage.getItem("latestDesc3")
+        }
+        // console.log(JSON.parse(arr))
+        // for(let i = 0; i<arr.length;i+=4){
+        //     allImages[i].setAttribute("src",arr);
+        // }
+        // console.log(JSON.stringify(arr))
+        // allImages[0].setAttribute("src",arr[0]);
+
+    </script>
+</body>
+</html>

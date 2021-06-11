@@ -1,10 +1,40 @@
-let checkFile = document.getElementsByTagName("body")[0];
+// let checkFile = document.getElementsByTagName("body")[0];
 let allImages = document.querySelectorAll(".anchor img");
 let allTitles = document.querySelectorAll(".anchor h2");     //This script pulls data from the JSON file and onto the categories page
 let allPrices = document.querySelectorAll(".anchor span")   // Belongs to categories.html
 let allAnchors = document.querySelectorAll(".anchor")
 
 let categoryToShow = localStorage.getItem("toLoad");
+// let arr= [];
+function latestSearches(image,title,price,description){
+ 
+        let changeNow = Math.floor(Math.random() * 10);
+
+        localStorage.setItem("latestChange",changeNow);
+        
+        if(localStorage.getItem("latestImage1")==null || localStorage.getItem("latestChange") < 3){
+            
+            localStorage.setItem("latestImage1",image);
+            localStorage.setItem("latestTitle1",title);
+            localStorage.setItem("latestPrice1",price);
+            // localStorage.setItem("latestDesc1",description);
+            
+        }
+        if(localStorage.getItem("latestImage2") == null || localStorage.getItem("latestChange") >= 3 && localStorage.getItem("latestChange") < 7  ){
+            
+            localStorage.setItem("latestImage2",image);
+            localStorage.setItem("latestTitle2",title);
+            localStorage.setItem("latestPrice2",price);
+            // localStorage.setItem("latestDesc2",description);
+        }
+        if(localStorage.getItem("latestImage3") == null || localStorage.getItem("latestChange") >= 7 ){
+            
+            localStorage.setItem("latestImage3",image);
+            localStorage.setItem("latestTitle3",title);
+            localStorage.setItem("latestPrice3",price);
+            // localStorage.setItem("latestDesc3",description);
+        }
+}
 
 if(categoryToShow == "Men's Fashion"){
     document.getElementById("pageTitle").innerText = "Welcome To Men's Fashion";
@@ -23,6 +53,8 @@ if(categoryToShow == "Men's Fashion"){
                     localStorage.setItem("title",response[0][i].title);
                     localStorage.setItem("price","$"+response[0][i].prices);
                     localStorage.setItem("description",response[0][i].description);
+
+                    latestSearches(response[0][i].images,response[0][i].title,"$"+response[0][i].prices,response[0][i].description)
 
                 })
 
@@ -53,6 +85,9 @@ if(categoryToShow == "Women's Fashion"){
                     localStorage.setItem("price","$"+response[1][i].shoePRices);
                     localStorage.setItem("description",response[1][i].description);
 
+                    latestSearches(response[1][i].shoeImages,response[1][i].shoeTItles,"$"+response[1][i].shoePRices,response[1][i].description)
+
+
                 })
             }
         }
@@ -79,6 +114,9 @@ if(categoryToShow == "Gym Clothing"){
                     localStorage.setItem("title",response[2][i].title);
                     localStorage.setItem("price","$"+response[2][i].price);
                     localStorage.setItem("description",response[2][i].description);
+
+                    latestSearches(response[2][i].image,response[2][i].title,"$"+response[2][i].price,response[2][i].description)
+
 
                 })
             }
@@ -107,6 +145,9 @@ if(categoryToShow == "Computers"){
                     localStorage.setItem("price","$"+response[3][i].price);
                     localStorage.setItem("description",response[3][i].description);
 
+                    latestSearches(response[3][i].image,response[3][i].title,"$"+response[3][i].price,response[3][i].description)
+
+
                 })
             }
         }
@@ -133,6 +174,9 @@ if(categoryToShow == "Monitor"){
                     localStorage.setItem("title",response[4][i].title);
                     localStorage.setItem("price","$"+response[4][i].price);
                     localStorage.setItem("description",response[4][i].description);
+
+                    latestSearches(response[4][i].image,response[4][i].title,"$"+response[4][i].price,response[4][i].description)
+
 
                 })
             }
@@ -161,6 +205,9 @@ if(categoryToShow == "Phone"){
                     localStorage.setItem("price","$"+response[5][i].price);
                     localStorage.setItem("description",response[5][i].description);
 
+                    latestSearches(response[5][i].image,response[5][i].title,"$"+response[5][i].price,response[5][i].description)
+
+
                 })
             }
         }
@@ -187,6 +234,9 @@ if(categoryToShow == "Pet Food"){
                     localStorage.setItem("title",response[6][i].title);
                     localStorage.setItem("price","$"+response[6][i].price);
                     localStorage.setItem("description",response[6][i].description);
+
+                    latestSearches(response[6][i].image,response[6][i].title,"$"+response[6][i].price,response[6][i].description)
+
 
                 })
             }
@@ -215,6 +265,9 @@ if(categoryToShow == "Pet Toys"){
                     localStorage.setItem("price","$"+response[7][i].price);
                     localStorage.setItem("description",response[7][i].description);
 
+                    latestSearches(response[7][i].image,response[7][i].title,"$"+response[7][i].price,response[7][i].description)
+
+
                 })
             }
         }
@@ -242,6 +295,9 @@ if(categoryToShow == "Hiking Gear"){
                     localStorage.setItem("price","$"+response[8][i].price);
                     localStorage.setItem("description",response[8][i].description);
 
+                    latestSearches(response[8][i].image,response[8][i].title,"$"+response[8][i].price,response[8][i].description)
+
+
                 })
             }
         }
@@ -268,6 +324,9 @@ if(categoryToShow == "Gym Equipment"){
                     localStorage.setItem("title",response[9][i].title);
                     localStorage.setItem("price","$"+response[9][i].price);
                     localStorage.setItem("description",response[9][i].description);
+
+                    latestSearches(response[9][i].image,response[9][i].title,"$"+response[9][i].price,response[9][i].description)
+
                 })
             }
         }

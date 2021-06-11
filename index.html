@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -12,8 +11,8 @@
     <link rel="stylesheet" href="design.css">
 
     <script src="https://kit.fontawesome.com/0793418c64.js" crossorigin="anonymous"></script>
+    
     <script defer src="script.js"></script>
-    <!-- <script defer src="categories.js"></script> -->
    
     <title>Bootstrap Front End</title>
 </head>
@@ -34,8 +33,6 @@
                 <input class="input w-100"  type="text" placeholder="Search">
                 <button type="submit" class="bg-dark text-light border-0"><i class="fas fa-search"></i></button>
             </div>
-            <!-- <li class="nav-item"> -->
-            <!-- </li> -->
             <ul class="navbar-nav active">
                 <li>
                     <a href="#" class="nav-link" onclick="document.querySelector('.loginForm ').style.display='block'" >Login</a>
@@ -45,7 +42,7 @@
                 </li>
                 <li>
                     
-                    <a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="shoppingCart.html" target="" id="cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -116,16 +113,13 @@
             
             <div class="col-6 col-sm-3 text-center ">
                 <h4 class="m-4">Clothing</h4>
-                <!-- <div class="centre"> -->
-                    <!-- <div> -->
 
                         <ul>
                             <li><a href="categories.html">Men's Fashion</a></li>
                             <li><a href="categories.html">Women's Fashion</a></li>
                             <li><a href="categories.html">Gym Clothing</a></li>
                         </ul>
-                    <!-- </div>k -->
-                <!-- </div> -->
+        
             </div>
             <div class="col-6 col-sm-3  text-center">
                 <h4 class="m-4">Electronics</h4>
@@ -153,7 +147,76 @@
         </div>
         
     </div>
-    <!-- Items Start -->
+    <div class="container itemsDisplay " id="latestSearchDiv">
+        <div class="center text-center">
+
+            <h3>Your Latest Searches</h3>
+        </div>
+        <div class="row categoriesRow">
+            <div class="col-12 item">
+                <p class="text-dark">Browse around to see your latest searches here.</p>
+            </div>
+        </div>
+    </div>
+                                                        <!-- Items suggested based on user activities -->
+    <div class="container itemsDisplay" id="latestSearchDiv2" style="display: none;">
+        <div class="center text-center">
+
+            <h3>Your Latest Searches</h3>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="item">
+                    <div  class="anchor">
+
+                        <img src="" id="images" class="w-100" alt="Item display">
+                        <div class="details">
+
+                            <h2></h2>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p></p>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4" id="item2">
+                <div class="item">
+                    <div class="anchor">
+
+                        <img src="" id="images" class="w-100" alt="Item display">
+                        <div class="details">
+
+                            <h2></h2>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4" id="item3" >
+                <div class="item">
+                    <div class="anchor">
+
+                        <img src="" id="images" class="w-100" alt="Item display">
+                        <div class="details">
+
+                            <h2></h2>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Items Start  -->
+
+                                                    <!-- Html for the display items written. They will be injected in by script.js 
+                                                    by pulling data from data.json file -->
     <div class="container itemsDisplay">
         <div class="center text-center">
 
@@ -161,8 +224,8 @@
         </div>
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html"  class="anchor">
+                <div class="item popItem">
+                    <a href="item.html"  class="anchors">
 
                         <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
@@ -177,10 +240,10 @@
             </div>
 
             <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
+                <div class="item popItem">
+                    <a href="item.html" class="anchors">
 
-                        <img src="" id="images" alt="Item display">
+                        <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
 
                             <h2></h2>
@@ -191,10 +254,10 @@
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
+                <div class="item popItem">
+                    <a href="item.html" class="anchors">
 
-                        <img src="" id="images" alt="Item display">
+                        <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
 
                             <h2></h2>
@@ -205,10 +268,10 @@
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
+                <div class="item popItem">
+                    <a href="item.html" class="anchors">
 
-                        <img src="" id="images" alt="Item display">
+                        <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
 
                             <h2></h2>
@@ -219,10 +282,10 @@
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
+                <div class="item popItem">
+                    <a href="item.html" class="anchors">
 
-                        <img src="" id="images" alt="Item display">
+                        <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
 
                             <h2></h2>
@@ -233,10 +296,10 @@
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <a href="item.html" class="anchor">
+                <div class="item popItem">
+                    <a href="item.html" class="anchors">
 
-                        <img src="" id="images" alt="Item display">
+                        <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
 
                             <h2></h2>
@@ -249,6 +312,7 @@
             
         </div>
     </div>
+                                                    <!-- ABout us section -->
     <h2 class="fastCart">What is FastCart?</h2>
     <div class="container-fluid aboutUS mb-3">
         <div class="placement">
@@ -316,7 +380,7 @@
         </footer>
     </div>
 
-<!-- Login Form with Bootstrap -->
+<!-- Login and signup Forms with Bootstrap. -->
 
     <div class="loginForm">
 
@@ -329,16 +393,19 @@
                     <h2 class="text-center">Login</h2>
                     <div class="form-group">
                         <label for="pass">Enter Name</label>
-                        <input type="text" id="pass" class="form-control" placeholder="Name">
+                        <input type="text" id="loginName" class="form-control" placeholder="Full name" onblur="validateSignup('errorLoginName','loginName',/^[a-zA-Z ]{2,30}$/,2,'Username may not contain any numbers or special characters')"  required>
+                        <div class="text-danger" id="errorLoginName"></div>
                         
                     </div>
                     <div class="form-group">
                         <label for="gpa">Enter Password</label>
-                        <input type="password" id="gpa" class="form-control" placeholder="Password">
+                        <input type="password" id="passy2" class="form-control" placeholder="Password" value="hhhhhH1!" onblur="validateSignup('errorPassName','passy2',/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,8,'Password must contain atleast one uppercase letter,1 special character and one number')" required>
+                        <div class="text-danger" id="errorPassName"></div>
+
                         
                     </div>
                     <div class="text-center" >
-                        <button type="button" id="event1" class="btn btn-info">Login</button>
+                        <button type="submit" id="event1" class="btn btn-info" onclick="formcheck2()">Login</button>
                         <button type="submit" id="event2" class="btn btn-warning">Forgot Password?</button>
                     </div>
                     <input type="checkbox" checked>Remember Me
@@ -361,22 +428,26 @@
                     <span onclick="document.querySelector('.signupForm').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times"></i></span>
                     <h2 class="text-center">Sign Up</h2>
                     <div class="form-group">
-                        <label for="pass">Enter Name</label>
-                        <input type="text"  class="form-control" placeholder="Name">
+                        <label for="pass">Enter Full name</label>
+                        <input type="text" id="username"  class="form-control" placeholder="Full name" onblur="validateSignup('errorName','username',/^[a-zA-Z ]{2,30}$/,2,'Username may not contain any numbers or special characters')" required>
+                        <div class="text-danger" id="errorName"></div>
                         <label >Enter Email</label>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" id="email" class="form-control" placeholder="Email" onblur="validateSignup('errorEmail','email',
+                        null,null,'Enter valid Email')" required>
+                        <div class="text-danger" id="errorEmail"></div>
                         <small>We Will Never Share This With Anyone</small>
                         
                     </div>
                     <div class="form-group">
                         <label for="gpa">Enter Password</label>
-                        <input type="password"  class="form-control" placeholder="Password">
+                        <input type="password" id="passy"  class="form-control" placeholder="Password" onblur="validateSignup('errorPass','passy',/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,8,'Password must contain atleast one uppercase letter,1 special character and one number')" required>
+                        <div class="text-danger" id="errorPass"></div>
                         <label for="gpa">Confirm Password</label>
-                        <input type="password"  class="form-control" placeholder="Confirm Password">
-                        
+                        <input type="password" id="confirmPassy"  class="form-control" placeholder="Confirm Password" onblur="confirmPass('errorCP')" required>
+                        <div class="text-danger" id="errorCP"></div>                        
                     </div>
                     <div class="text-center" >
-                        <button type="button"  class="btn btn-info">Sign Up</button>
+                        <button  class="btn btn-info" onclick="formCheck()">Sign Up</button>
                         <!-- <button type="submit" id="event2" class="btn btn-warning">Forgot Password?</button> -->
                     </div>
                     <br>
@@ -387,6 +458,100 @@
                 </form>
             </div>
         </div>
+
+    <script>
+        // Form Validation script
+        var isLogin;
+
+        function validateSignup(id,id2,regex,minLength,message){
+            var ctrl = document.getElementById(id2);
+            if(id2 == "email"){
+                regex= /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            }       
+            if(regex.test(ctrl.value) == false){
+                if(ctrl.value.length < minLength){
+                    document.getElementById(id).innerText = "Enter atleast "+minLength+" characters"
+                    document.getElementById(id2).style.border = "4px solid red";
+                }
+                else{
+                    document.getElementById(id).innerText = message;
+                    document.getElementById(id2).style.border = "4px solid red";
+                }
+            }
+            else{
+                document.getElementById(id).innerText = "";
+                document.getElementById(id2).style.border = "4px solid green";
+            }
+        }
+        function confirmPass(id){
+            var ctrl = document.getElementById("confirmPassy");
+            var originalPass = document.getElementById("passy");
+                if(document.getElementById("passy").style.borderColor == "green"){
+
+                    if(ctrl.value == originalPass.value){
+                        document.getElementById(id).innerText = "";
+                        document.getElementById("confirmPassy").style.border = "4px solid green";
+                    }
+                    else{
+                        document.getElementById(id).innerText = "Password must be the same";
+                        document.getElementById("confirmPassy").style.border = "4px solid red";
+                    }
+                }
+        }
+        function formCheck(){
+            if(document.getElementById("username").style.borderColor == "green"&&document.getElementById("email").style.borderColor == "green"
+            &&document.getElementById("passy").style.borderColor == "green"&&document.getElementById("confirmPassy").style.borderColor == "green"){
+                // document.getElementById("username").value= null;
+                // document.getElementById("email").value = null;
+                // document.getElementById("passy").value = null;
+                // document.getElementById("confirmPass").value = null;
+                document.querySelector('.signupForm').style.display='none';
+                // location.reload();
+                
+            }
+        }
+        function formcheck2(){
+            if(document.getElementById("loginName").style.borderColor == "green" && document.getElementById("passy2").style.borderColor == "green"){
+                document.querySelector('.loginForm').style.display='none';
+                isLogin = true;
+            }
+            else{
+                isLogin = false;
+            }
+        }
+        // function shoppingCart(){
+        //     if(isLogin == false || isLogin == null){
+        //         alert("You must login to view your cart")
+        //     }
+        //     else{
+        //         document.getElementById("cart").setAttribute("src","shoppingCart.html");
+        //         document.getElementById("cart").setAttribute("target","_blank");
+        //         document.getElementById("cart").click();
+        //         // window.location.href ="shoppingCart.html";
+        //     }
+        // }
+        let allImage = document.querySelectorAll(".anchor img");
+        let allTitle = document.querySelectorAll(".anchor h2");     //This script pulls data from the JSON file and onto the categories page
+        let allPrice = document.querySelectorAll(".anchor span")
+
+        allImage[0].setAttribute("src",localStorage.getItem("latestImage1"))
+        allTitle[0].innerText = localStorage.getItem("latestTitle1")
+        allPrice[0].innerText = localStorage.getItem("latestPrice1")
+
+        if(localStorage.getItem("latestImage2")!=null){
+            allImage[1].setAttribute("src",localStorage.getItem("latestImage2"))
+            allTitle[1].innerText = localStorage.getItem("latestTitle2")
+            allPrice[1].innerText = localStorage.getItem("latestPrice2")
+        }
+        if(localStorage.getItem("latestImage3")!=null){
+            allImage[2].setAttribute("src",localStorage.getItem("latestImage3"))
+            allTitle[2].innerText = localStorage.getItem("latestTitle3")
+            allPrice[2].innerText = localStorage.getItem("latestPrice3")
+            document.getElementById("latestSearchDiv").style.display = "none"
+            document.getElementById("latestSearchDiv2").style.display = "block"
+
+        }
+    </script>
 
     
 </body>
