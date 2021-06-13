@@ -114,3 +114,40 @@ var mainMenu = document.getElementById("mainMenu").addEventListener("click",func
     document.querySelectorAll(".clickToShow ul")[2].style.display="none";
     document.querySelectorAll(".clickToShow ul")[3].style.display="none";
 });
+
+function latestSearchesClick(){
+    var allAnchors = document.querySelectorAll(".anchor")
+    var allTitles = document.querySelectorAll(".anchor h2")
+    var searchQuery=""
+
+    for(let i = 0;i<allAnchors.length;i++){
+        allAnchors[i].addEventListener("click",function(){
+            
+            var searchQuery = allTitles[i].innerText
+            // alert(searchQuery)
+            
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var  response = JSON.parse(xhttp.responseText);
+                    // alert(response[0][0].title)
+                    for(let i = 0; i < response.length;i++){
+                        for(let j =0; j<response[i].length;j++){
+                            if(searchQuery.localeCompare(response[i][j].title) == 0){
+                                localStorage.setItem("title",response[i][j].title)
+                                localStorage.setItem("image",response[i][j].image)
+                                localStorage.setItem("price","$"+response[i][j].price)
+                                localStorage.setItem("description",response[i][j].description)
+                            }
+                        }
+
+                    }
+                };
+            }
+            xhttp.open("GET", "data.json", true);
+            xhttp.send();
+        })
+    }
+
+}
+latestSearchesClick()

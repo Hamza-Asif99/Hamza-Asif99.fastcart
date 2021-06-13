@@ -142,7 +142,7 @@
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="item">
-                    <div  class="anchor">
+                    <a href="item.html"  class="anchor">
 
                         <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
@@ -150,7 +150,7 @@
                             <h2></h2>
                             <span></span>
                         </div>
-                    </div>
+                    </a>
                     <p></p>
 
                 </div>
@@ -158,7 +158,7 @@
 
             <div class="col-12 col-sm-6 col-md-4" id="item2">
                 <div class="item">
-                    <div class="anchor">
+                    <a href="item.html"  class="anchor">
 
                         <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
@@ -166,13 +166,13 @@
                             <h2></h2>
                             <span></span>
                         </div>
-                    </div>
+                    </a>
                     <p></p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4" id="item3" >
                 <div class="item">
-                    <div class="anchor">
+                    <a href="item.html"  class="anchor">
 
                         <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
@@ -180,7 +180,7 @@
                             <h2></h2>
                             <span></span>
                         </div>
-                    </div>
+                    </a>
                     <p></p>
                 </div>
             </div>
@@ -471,7 +471,7 @@
                 
             }
         }
-        if(localStorage.getItem("addToTable")==2){
+        if(localStorage.getItem("addToTable")==2 && localStorage.getItem("tableData")!=null){
             var data = JSON.parse(localStorage.getItem("tableData"))
                 var objLength = Object.keys(data).length;
                 console.log(objLength)
@@ -518,7 +518,7 @@
                 }
         }
 
-        if(JSON.parse(localStorage.getItem("tableData")).length != 0){
+        if(JSON.parse(localStorage.getItem("tableData")) != null){
             document.getElementsByClassName("hideOnAddition")[0].style.display = "none";
 
             document.getElementById("header").innerText = "Shopping Cart"
@@ -537,7 +537,6 @@
         
         })
         }
-        // let arr = localStorage.getItem("latestSearches");
         let allImages = document.querySelectorAll(".anchor img");
         let allTitles = document.querySelectorAll(".anchor h2");    
         let allPrices = document.querySelectorAll(".anchor span")
@@ -560,8 +559,44 @@
             allPrices[2].innerText = localStorage.getItem("latestPrice3")
             document.getElementById("latestSearchDiv").style.display = "none"
             document.getElementById("latestSearchDiv2").style.display = "block"
-            // allDescriptions[2].innerText = localStorage.getItem("latestDesc3")
         }
+
+        function latestSearchesClick(){
+            var allAnchors = document.querySelectorAll(".anchor")
+            var allTitles = document.querySelectorAll(".anchor h2")
+            var searchQuery=""
+
+            for(let i = 0;i<allAnchors.length;i++){
+                allAnchors[i].addEventListener("click",function(){
+                    
+                    var searchQuery = allTitles[i].innerText
+                    // alert(searchQuery)
+                    
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var  response = JSON.parse(xhttp.responseText);
+                            // alert(response[0][0].title)
+                            for(let i = 0; i < response.length;i++){
+                                for(let j =0; j<response[i].length;j++){
+                                    if(searchQuery.localeCompare(response[i][j].title) == 0){
+                                        localStorage.setItem("title",response[i][j].title)
+                                        localStorage.setItem("image",response[i][j].image)
+                                        localStorage.setItem("price","$"+response[i][j].price)
+                                        localStorage.setItem("description",response[i][j].description)
+                                    }
+                                }
+
+                            }
+                        };
+                    }
+                    xhttp.open("GET", "data.json", true);
+                    xhttp.send();
+                })
+            }
+
+        }
+        latestSearchesClick()
 
         function changeStorage(){
             localStorage.setItem("addToTable",2)
@@ -644,13 +679,26 @@
 
                     localStorage.setItem("baseCosts",JSON.stringify(baseCostss))
                     localStorage.setItem("addToTable",2)
+
+                    checkNull()
+
                     location.href = "shoppingCart.html"
 
                 })
             }
 
         }
-        cartInteractivity();
+        if(localStorage.getItem("tableData")!=null){
+
+            cartInteractivity();
+        }
+        function checkNull(){
+            var alltr = document.querySelectorAll("tbody tr")
+
+            if(alltr.length == 0){
+                localStorage.removeItem("tableData")
+            }
+        }
 
         function costCalculate(index,quantity){
             console.log(index)

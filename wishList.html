@@ -49,6 +49,7 @@
             </ul>
         </div>
     </nav>
+
     <div class="container itemsDisplay">
         <div class="center text-center">
             <h3 id="header" >Add items to your wishlist</h3>
@@ -116,15 +117,23 @@
         </div>
     </div>
 
-    <div class="container itemsDisplay" id="latestSearchDiv2" style="display: none;">
+    <div class="container itemsDisplay " id="latestSearchDiv">
         <div class="center text-center">
 
             <h3>Your Latest Searches</h3>
         </div>
+        <div class="row categoriesRow">
+            <div class="col-12 item">
+                <p class="text-dark">Browse around to see your latest searches here.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container itemsDisplay" id="latestSearchDiv2" style="display: none;" >
+
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="item">
-                    <div  class="anchor">
+                    <a href="item.html" class="anchor">
 
                         <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
@@ -132,7 +141,7 @@
                             <h2></h2>
                             <span></span>
                         </div>
-                    </div>
+                    </a>
                     <p></p>
 
                 </div>
@@ -140,7 +149,7 @@
 
             <div class="col-12 col-sm-6 col-md-4" id="item2">
                 <div class="item">
-                    <div class="anchor">
+                    <a href="item.html" class="anchor">
 
                         <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
@@ -148,13 +157,13 @@
                             <h2></h2>
                             <span></span>
                         </div>
-                    </div>
+                    </a>
                     <p></p>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4" id="item3" >
                 <div class="item">
-                    <div class="anchor">
+                    <a href="item.html" class="anchor">
 
                         <img src="" id="images" class="w-100" alt="Item display">
                         <div class="details">
@@ -162,13 +171,14 @@
                             <h2></h2>
                             <span></span>
                         </div>
-                    </div>
+                    </a>
                     <p></p>
                 </div>
             </div>
             
         </div>
     </div>
+    
 
 
     <div class="container-fluid text-light">
@@ -281,70 +291,7 @@
             </div>
         </div>
     </div>
-    <div class="container itemsDisplay " id="latestSearchDiv">
-        <div class="center text-center">
-
-            <h3>Your Latest Searches</h3>
-        </div>
-        <div class="row categoriesRow">
-            <div class="col-12 item">
-                <p class="text-dark">Browse around to see your latest searches here.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container itemsDisplay" id="latestSearchDiv2" style="display: none;">
-        <div class="center text-center">
-
-            <h3>Your Latest Searches</h3>
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="item">
-                    <div  class="anchor">
-
-                        <img src="" id="images" class="w-100" alt="Item display">
-                        <div class="details">
-
-                            <h2></h2>
-                            <span></span>
-                        </div>
-                    </div>
-                    <p></p>
-
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-4" id="item2">
-                <div class="item">
-                    <div class="anchor">
-
-                        <img src="" id="images" class="w-100" alt="Item display">
-                        <div class="details">
-
-                            <h2></h2>
-                            <span></span>
-                        </div>
-                    </div>
-                    <p></p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4" id="item3" >
-                <div class="item">
-                    <div class="anchor">
-
-                        <img src="" id="images" class="w-100" alt="Item display">
-                        <div class="details">
-
-                            <h2></h2>
-                            <span></span>
-                        </div>
-                    </div>
-                    <p></p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+    
 
     <script>
         if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
@@ -364,7 +311,7 @@
                     }
                 }
             }
-            if(localStorage.getItem("addToWishlist")==2){
+            if(localStorage.getItem("addToWishlist")==2 && localStorage.getItem("wishlistData")!=null){
                 refreshRows()
             }
             display()
@@ -502,7 +449,7 @@
 
         function display(){
 
-            if(JSON.parse(localStorage.getItem("wishlistData")).length != 0){
+            if(JSON.parse(localStorage.getItem("wishlistData")) != null){
                 document.getElementsByClassName("hideOnAddition")[0].style.display = "none";
     
                 document.getElementById("header").innerText = "Your wishlist"
@@ -521,6 +468,7 @@
             allImages[0].setAttribute("src",localStorage.getItem("latestImage1"))
             allTitles[0].innerText = localStorage.getItem("latestTitle1")
             allPrices[0].innerText = localStorage.getItem("latestPrice1")
+            // allDescriptions[0].innerText = localStorage.getItem("latestPrice1")
 
             if(localStorage.getItem("latestImage2")!=null){
                 allImages[1].setAttribute("src",localStorage.getItem("latestImage2"))   
@@ -537,7 +485,42 @@
         }
         latestSearches()
 
-        
+        function latestSearchesClick(){
+            var allAnchors = document.querySelectorAll(".anchor")
+            var allTitles = document.querySelectorAll(".anchor h2")
+            var searchQuery=""
+
+            for(let i = 0;i<allAnchors.length;i++){
+                allAnchors[i].addEventListener("click",function(){
+                    
+                    var searchQuery = allTitles[i].innerText
+                    // alert(searchQuery)
+                    
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var  response = JSON.parse(xhttp.responseText);
+                            // alert(response[0][0].title)
+                            for(let i = 0; i < response.length;i++){
+                                for(let j =0; j<response[i].length;j++){
+                                    if(searchQuery.localeCompare(response[i][j].title) == 0){
+                                        localStorage.setItem("title",response[i][j].title)
+                                        localStorage.setItem("image",response[i][j].image)
+                                        localStorage.setItem("price","$"+response[i][j].price)
+                                        localStorage.setItem("description",response[i][j].description)
+                                    }
+                                }
+
+                            }
+                        };
+                    }
+                    xhttp.open("GET", "data.json", true);
+                    xhttp.send();
+                })
+            }
+
+        }
+        latestSearchesClick()
 
         function itemRemoval(indexSpecified){
             var allCrosses = document.querySelectorAll("#list tr i")
@@ -549,7 +532,7 @@
                 data.splice(indexSpecified,1)
                 localStorage.setItem("wishlistData",JSON.stringify(data))
                 localStorage.setItem("addToWishlist",2)
-
+                checkNull()
             }
             else{
                 for(let i = 0; i<allCrosses.length;i++){
@@ -559,6 +542,7 @@
                         localStorage.setItem("wishlistData",JSON.stringify(data))
     
                         localStorage.setItem("addToWishlist",2)
+                        checkNull()
                         location.href = "wishList.html"
     
                     })
@@ -567,6 +551,15 @@
 
         }
         itemRemoval()
+
+        function checkNull(){
+            var alltr = document.querySelectorAll("tbody tr")
+
+            if(alltr.length == 0){
+                console.log("check")
+                localStorage.removeItem("wishlistData")
+            }
+        }
 
         function addingToCart(){
             var allButtons = document.querySelectorAll("#list tr button")

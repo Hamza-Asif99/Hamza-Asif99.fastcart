@@ -4,8 +4,8 @@
             "ï»¿web-scraper-order": "1621686392-56", 
             "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
             "title": "JOGAL Men's Flower Casual Button Down Short Sleeve Hawaiian Shirt Suits",
-            "images": "https://m.media-amazon.com/images/I/71abnYEKqML._AC_UL320_.jpg",
-            "prices": "30"
+            "image": "https://m.media-amazon.com/images/I/71abnYEKqML._AC_UL320_.jpg",
+            "price": "30"
   ,
   "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
 
@@ -13,9 +13,9 @@
         {
             "ï»¿web-scraper-order": "1621686392-33",
             "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
-            "images": "https://m.media-amazon.com/images/I/717Ad9VW5vL._AC_UL320_.jpg",
+            "image": "https://m.media-amazon.com/images/I/717Ad9VW5vL._AC_UL320_.jpg",
             "title": "Hanes Men's Long-Sleeve ComfortSoft T-Shirt (Pack of 4)",
-            "prices":"20"
+            "price":"20"
   ,
   "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
         },
@@ -24,17 +24,17 @@
             "ï»¿web-scraper-order": "1621686392-64",
             "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
             "title": "Hanes Men's Long-Sleeve ComfortSoft T-Shirt (Pack of 4)",
-            "images": "https://m.media-amazon.com/images/I/91YuQ25qu5L._AC_UL320_.jpg",
-            "prices":"40"
+            "image": "https://m.media-amazon.com/images/I/91YuQ25qu5L._AC_UL320_.jpg",
+            "price":"40"
   ,
   "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
         },
         {
             "ï»¿web-scraper-order": "1621686392-43",
             "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
-            "images":"https://m.media-amazon.com/images/I/81woNVByHSL._AC_UL320_.jpg",
+            "image":"https://m.media-amazon.com/images/I/81woNVByHSL._AC_UL320_.jpg",
             "title": "Amazon Essentials Men's Slim-Fit Long-Sleeve Pattern Pocket Oxford Shirt",
-            "prices":"15"
+            "price":"15"
   ,
   "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
         },
@@ -43,8 +43,8 @@
             "ï»¿web-scraper-order": "1621686392-47",
             "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
             "title": "VATPAVE Mens Floral Hawaiian Shirts Short Sleeve Button Down Beach Shirts",
-            "images": "https://m.media-amazon.com/images/I/71kM3J7wfHL._AC_UL320_.jpg",		
-            "prices":"45"
+            "image": "https://m.media-amazon.com/images/I/71kM3J7wfHL._AC_UL320_.jpg",		
+            "price":"45"
   ,
   "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
 
@@ -53,8 +53,8 @@
             "ï»¿web-scraper-order": "1621686392-66",
             "web-scraper-start-url": "https://www.amazon.com/s?i=fashion-mens-intl-ship&bbn=16225019011&rh=n%3A16225019011%2Cn%3A1040658%2Cn%3A2476517011&dc&qid=1621683679&rnid=1040658&ref=sr_nr_n_1",
             "title": "Gildan Men's Heavy Cotton T-Shirt, Style G5000, 2-Pack",
-            "images": "https://m.media-amazon.com/images/I/71Svz58xiVL._AC_UL320_.jpg",
-            "prices":"55"
+            "image": "https://m.media-amazon.com/images/I/71Svz58xiVL._AC_UL320_.jpg",
+            "price":"55"
   ,
   "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
 
@@ -67,18 +67,18 @@
         {
           "web-scraper-order": "1621774089-185",
           "web-scraper-start-url": "https://www.amazon.com/s?bbn=16225018011&rh=n%3A7141123011%2Cn%3A16225018011%2Cn%3A679337011&pf_rd_i=16225018011&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=e9a7a2cd-d373-460c-8c25-702b5e2acb03&pf_rd_r=RJ3XFTJ80QN3485FFZDG&pf_rd_s=merchandised-search-4&pf_rd_t=101&ref=s9_acss_bw_cts_AEAISWF_T2_w",
-          "shoeImages": "https://m.media-amazon.com/images/I/51Ycwl+VydL._AC_UL320_.jpg",
-          "shoeTItles": "FUNKYMONKEY Women's Comfort Slides Double Buckle Adjustable EVA Flat Sandals",
-          "shoePRices": "50"
+          "image": "https://m.media-amazon.com/images/I/51Ycwl+VydL._AC_UL320_.jpg",
+          "title": "FUNKYMONKEY Women's Comfort Slides Double Buckle Adjustable EVA Flat Sandals",
+          "price": "50"
 ,
 "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
         },
         {
           "web-scraper-order": "1621774089-212",
           "web-scraper-start-url": "https://www.amazon.com/s?bbn=16225018011&rh=n%3A7141123011%2Cn%3A16225018011%2Cn%3A679337011&pf_rd_i=16225018011&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=e9a7a2cd-d373-460c-8c25-702b5e2acb03&pf_rd_r=RJ3XFTJ80QN3485FFZDG&pf_rd_s=merchandised-search-4&pf_rd_t=101&ref=s9_acss_bw_cts_AEAISWF_T2_w",
-          "shoeImages": "https://m.media-amazon.com/images/I/81mwspxjpgL._AC_UL320_.jpg",
-          "shoeTItles": "Brooks Women's Adrenaline GTS 21",
-          "shoePRices": "30"
+          "image": "https://m.media-amazon.com/images/I/81mwspxjpgL._AC_UL320_.jpg",
+          "title": "Brooks Women's Adrenaline GTS 21",
+          "price": "30"
 ,
 "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
         },
@@ -86,27 +86,27 @@
         {
           "web-scraper-order": "1621774089-191",
           "web-scraper-start-url": "https://www.amazon.com/s?bbn=16225018011&rh=n%3A7141123011%2Cn%3A16225018011%2Cn%3A679337011&pf_rd_i=16225018011&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=e9a7a2cd-d373-460c-8c25-702b5e2acb03&pf_rd_r=RJ3XFTJ80QN3485FFZDG&pf_rd_s=merchandised-search-4&pf_rd_t=101&ref=s9_acss_bw_cts_AEAISWF_T2_w",
-          "shoeImages": "https://m.media-amazon.com/images/I/6144k0M50TL._AC_UL320_.jpg",
-          "shoeTItles": "Reef Women's Cushion Breeze Sandal",
-          "shoePRices": "69"
+          "image": "https://m.media-amazon.com/images/I/6144k0M50TL._AC_UL320_.jpg",
+          "title": "Reef Women's Cushion Breeze Sandal",
+          "price": "69"
 ,
 "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
         },
         {
           "web-scraper-order": "1621774089-163",
           "web-scraper-start-url": "https://www.amazon.com/s?bbn=16225018011&rh=n%3A7141123011%2Cn%3A16225018011%2Cn%3A679337011&pf_rd_i=16225018011&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=e9a7a2cd-d373-460c-8c25-702b5e2acb03&pf_rd_r=RJ3XFTJ80QN3485FFZDG&pf_rd_s=merchandised-search-4&pf_rd_t=101&ref=s9_acss_bw_cts_AEAISWF_T2_w",
-          "shoeImages": "https://m.media-amazon.com/images/I/71ANbA7wX+L._AC_UL320_.jpg",
-          "shoeTItles": "Teva Women's Tirra Sandal",
-          "shoePRices": "25"
+          "image": "https://m.media-amazon.com/images/I/71ANbA7wX+L._AC_UL320_.jpg",
+          "title": "Teva Women's Tirra Sandal",
+          "price": "25"
 ,
 "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
         },
         {
           "web-scraper-order": "1621774089-169",
           "web-scraper-start-url": "https://www.amazon.com/s?bbn=16225018011&rh=n%3A7141123011%2Cn%3A16225018011%2Cn%3A679337011&pf_rd_i=16225018011&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=e9a7a2cd-d373-460c-8c25-702b5e2acb03&pf_rd_r=RJ3XFTJ80QN3485FFZDG&pf_rd_s=merchandised-search-4&pf_rd_t=101&ref=s9_acss_bw_cts_AEAISWF_T2_w",
-          "shoeImages": "https://m.media-amazon.com/images/I/81ttu9aElmL._AC_UL320_.jpg",
-          "shoeTItles": "Wild Origins Inflatable Stand Up Paddle Board",
-          "shoePRices": "70"
+          "image": "https://m.media-amazon.com/images/I/81ttu9aElmL._AC_UL320_.jpg",
+          "title": "Wild Origins Inflatable Stand Up Paddle Board",
+          "price": "70"
 ,
 "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
         },
@@ -114,9 +114,9 @@
         {
           "web-scraper-order": "1621774089-213",
           "web-scraper-start-url": "https://www.amazon.com/s?bbn=16225018011&rh=n%3A7141123011%2Cn%3A16225018011%2Cn%3A679337011&pf_rd_i=16225018011&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=e9a7a2cd-d373-460c-8c25-702b5e2acb03&pf_rd_r=RJ3XFTJ80QN3485FFZDG&pf_rd_s=merchandised-search-4&pf_rd_t=101&ref=s9_acss_bw_cts_AEAISWF_T2_w",
-          "shoeImages": "https://m.media-amazon.com/images/I/51z+WWfRoPL._AC_UL320_.jpg",
-          "shoeTItles": "Dr. Martens Women's Vegan Blaire Cambridge Fisherman Sandal",
-          "shoePRices": "55"
+          "image": "https://m.media-amazon.com/images/I/51z+WWfRoPL._AC_UL320_.jpg",
+          "title": "Dr. Martens Women's Vegan Blaire Cambridge Fisherman Sandal",
+          "price": "55"
 ,
 "description": "lorem ipsum falana teengra dorime ameno ameno lachirey ameno mai dorime do la sorey ameno himtey dary ameno lachi re lachi re ameno"
         }

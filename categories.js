@@ -44,17 +44,17 @@ if(categoryToShow == "Men's Fashion"){
             var  response = JSON.parse(xhttp.responseText);
 
             for(let i = 0; i < response[0].length;i++){
-                allImages[i].setAttribute("src",response[0][i].images);
+                allImages[i].setAttribute("src",response[0][i].image);
                 allTitles[i].innerText = response[0][i].title; 
-                allPrices[i].innerText ="$"+ response[0][i].prices;
+                allPrices[i].innerText ="$"+ response[0][i].price;
 
                 allAnchors[i].addEventListener("click",function(){
-                    localStorage.setItem("image",response[0][i].images);
+                    localStorage.setItem("image",response[0][i].image);
                     localStorage.setItem("title",response[0][i].title);
-                    localStorage.setItem("price","$"+response[0][i].prices);
+                    localStorage.setItem("price","$"+response[0][i].price);
                     localStorage.setItem("description",response[0][i].description);
 
-                    latestSearches(response[0][i].images,response[0][i].title,"$"+response[0][i].prices,response[0][i].description)
+                    latestSearches(response[0][i].image,response[0][i].title,"$"+response[0][i].price,response[0][i].description)
 
                 })
 
@@ -75,17 +75,17 @@ if(categoryToShow == "Women's Fashion"){
             
             for(let i = 0; i < response[1].length;i++){
                 // console.log(response[1][1].shoeTItles);
-                allImages[i].setAttribute("src",response[1][i].shoeImages);
-                allTitles[i].innerText = response[1][i].shoeTItles; 
-                allPrices[i].innerText ="$"+ response[1][i].shoePRices;
+                allImages[i].setAttribute("src",response[1][i].image);
+                allTitles[i].innerText = response[1][i].title; 
+                allPrices[i].innerText ="$"+ response[1][i].price;
 
                 allAnchors[i].addEventListener("click",function(){
-                    localStorage.setItem("image",response[1][i].shoeImages);
-                    localStorage.setItem("title",response[1][i].shoeTItles);
-                    localStorage.setItem("price","$"+response[1][i].shoePRices);
+                    localStorage.setItem("image",response[1][i].image);
+                    localStorage.setItem("title",response[1][i].title);
+                    localStorage.setItem("price","$"+response[1][i].price);
                     localStorage.setItem("description",response[1][i].description);
 
-                    latestSearches(response[1][i].shoeImages,response[1][i].shoeTItles,"$"+response[1][i].shoePRices,response[1][i].description)
+                    latestSearches(response[1][i].image,response[1][i].title,"$"+response[1][i].price,response[1][i].description)
 
 
                 })
