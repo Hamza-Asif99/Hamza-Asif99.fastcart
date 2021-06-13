@@ -14,6 +14,8 @@
 
     <script src="https://kit.fontawesome.com/0793418c64.js" crossorigin="anonymous"></script>
     <script defer src="item.js"></script>
+    <script defer src="validation.js"></script>
+
     <!-- <script  src="categories.js"></script> -->
 </head>
 <body class="itemPage">
@@ -44,7 +46,7 @@
                 </li>
                 <li>
                     
-                    <a href="shoppingCart.html" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="shoppingCart.html" onclick="changeStorage()" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -69,10 +71,17 @@
                     <p style="color: wheat;" id="description"></p>
                 </div>
                 <div class="btns">
-                    <button class="btn">Add To Cart</button>
+                    <a href="shoppingCart.html">
+
+                        <button class="btn" id="shoppingCart">Add To Cart</button>
+                    </a>
     
                     <button class="btn">Add To WishList</button>
                 </div>
+                <div><input type="text" onblur="validate()" id="quantity" style="display: none;">How many items do you want to add to cart?</div>
+            
+                <button class="btn" onclick="addCart()" id="addNow" style="display:none">Add Now</button>
+                <div class="text-danger"id="error" style="display: none;">Please enter a valid number b/w 1-9</div>
             </div>
         </div>
 
@@ -128,16 +137,19 @@
                     <h2 class="text-center">Login</h2>
                     <div class="form-group">
                         <label for="pass">Enter Name</label>
-                        <input type="text" id="pass" class="form-control" placeholder="Name">
+                        <input type="text" id="loginName" class="form-control" placeholder="Full name" onblur="validateSignup('errorLoginName','loginName',/^[a-zA-Z ]{2,30}$/,2,'Username may not contain any numbers or special characters')"  required>
+                        <div class="text-danger" id="errorLoginName"></div>
                         
                     </div>
                     <div class="form-group">
                         <label for="gpa">Enter Password</label>
-                        <input type="password" id="gpa" class="form-control" placeholder="Password">
+                        <input type="password" id="passy2" class="form-control" placeholder="Password"  onblur="validateSignup('errorPassName','passy2',/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,8,'Password must contain atleast one uppercase letter,1 special character and one number')" required>
+                        <div class="text-danger" id="errorPassName"></div>
+
                         
                     </div>
                     <div class="text-center" >
-                        <button type="button" id="event1" class="btn btn-info">Login</button>
+                        <button type="submit" id="event1" class="btn btn-info" onclick="formcheck2()">Login</button>
                         <button type="submit" id="event2" class="btn btn-warning">Forgot Password?</button>
                     </div>
                     <input type="checkbox" checked>Remember Me
@@ -160,22 +172,26 @@
                     <span onclick="document.querySelector('.signupForm').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times"></i></span>
                     <h2 class="text-center">Sign Up</h2>
                     <div class="form-group">
-                        <label for="pass">Enter Name</label>
-                        <input type="text"  class="form-control" placeholder="Name">
+                        <label for="pass">Enter Full name</label>
+                        <input type="text" id="username"  class="form-control" placeholder="Full name" onblur="validateSignup('errorName','username',/^[a-zA-Z ]{2,30}$/,2,'Username may not contain any numbers or special characters')" required>
+                        <div class="text-danger" id="errorName"></div>
                         <label >Enter Email</label>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" id="email" class="form-control" placeholder="Email" onblur="validateSignup('errorEmail','email',
+                        null,null,'Enter valid Email')" required>
+                        <div class="text-danger" id="errorEmail"></div>
                         <small>We Will Never Share This With Anyone</small>
                         
                     </div>
                     <div class="form-group">
                         <label for="gpa">Enter Password</label>
-                        <input type="password"  class="form-control" placeholder="Password">
+                        <input type="password" id="passy"  class="form-control" placeholder="Password" onblur="validateSignup('errorPass','passy',/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,8,'Password must contain atleast one uppercase letter,1 special character and one number')" required>
+                        <div class="text-danger" id="errorPass"></div>
                         <label for="gpa">Confirm Password</label>
-                        <input type="password"  class="form-control" placeholder="Confirm Password">
-                        
+                        <input type="password" id="confirmPassy"  class="form-control" placeholder="Confirm Password" onblur="confirmPass('errorCP')" required>
+                        <div class="text-danger" id="errorCP"></div>                        
                     </div>
                     <div class="text-center" >
-                        <button type="button"  class="btn btn-info">Sign Up</button>
+                        <button  class="btn btn-info" onclick="formCheck()">Sign Up</button>
                         <!-- <button type="submit" id="event2" class="btn btn-warning">Forgot Password?</button> -->
                     </div>
                     <br>
@@ -186,6 +202,17 @@
                 </form>
             </div>
         </div>
+    </div>
+
+        <script>
+
+            document.getElementById("shoppingCart").addEventListener("click",function(){
+                localStorage.setItem("addToTable",1)
+            })
+            function changeStorage(){
+                localStorage.setItem("addToTable",2)
+            }
+        </script>
 
 </body>
 </html>

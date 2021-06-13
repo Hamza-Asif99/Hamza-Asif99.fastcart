@@ -9,7 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
     <link rel="stylesheet" href="design.css">
+    <script defer src="validation.js"></script>
 
     <script src="https://kit.fontawesome.com/0793418c64.js" crossorigin="anonymous"></script>
 </head>
@@ -39,7 +42,7 @@
                 </li>
                 <li>
                     
-                    <a href="shoppingCart.html" target="" id="cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="shoppingCart.html" onclick="changeStorage()" target="" id="cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -47,11 +50,11 @@
 
     <div class="container itemsDisplay">
         <div class="center text-center">
-            <h3>Add items to your cart !</h3>
+            <h3 id="header" >Add items to your cart !</h3>
 
         </div>        
 
-        <div class="row categoriesRow">
+        <div class="row categoriesRow hideOnAddition">
             <div class="col-12 item">
                 <h4>Cart Is Empty</h4>
                 <p class="text-dark">Your shopping cart lives to serve, give it purpose and add items to buy.
@@ -59,12 +62,7 @@
                 </p>
             </div>
             <br>
-            <!-- <div class="col-12">
-                <div class="center text-center">
-                    <h3>Categories</h3>
-        
-                </div>   
-            </div> -->
+ 
             <div class="col-6 col-sm-3 item text-center">
                 <h2>Clothing</h2>
                 <ul class="ulClothing">
@@ -98,6 +96,31 @@
         </div>
         
     </div>
+    <div class="container itemsDisplay hideOnRemoval">
+        <div class="row">
+            <div class="col-12">
+                <table class="table text-light" id="list" style="background-color: rgba(1, 1, 1, 0.8);">
+                    <thead>
+                      <tr class="text-warning">
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Remove</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div class="total text-warning p-4" style="background-color:rgba(1, 1, 1, 0.8) ;">
+            <span>Total Amount: </span>
+            <span class="text-light ml-5" id="amount"></span>
+        </div>
+    </div>
+
+
     <div class="container itemsDisplay " id="latestSearchDiv">
         <div class="center text-center">
 
@@ -198,8 +221,313 @@
             
         </footer>
     </div>
+    <div class="loginForm">
 
-    <script>
+        <div class="paretnDiv modal animate text-center" style="display: flex; justify-content: center;">
+
+            <div style="width: 65%;">
+                
+                <form action="" id="frm1" class="text-light">
+                    <span onclick="document.querySelector('.loginForm').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times"></i></span>
+                    <h2 class="text-center">Login</h2>
+                    <div class="form-group">
+                        <label for="pass">Enter Name</label>
+                        <input type="text" id="loginName" class="form-control" placeholder="Full name" onblur="validateSignup('errorLoginName','loginName',/^[a-zA-Z ]{2,30}$/,2,'Username may not contain any numbers or special characters')"  required>
+                        <div class="text-danger" id="errorLoginName"></div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="gpa">Enter Password</label>
+                        <input type="password" id="passy2" class="form-control" placeholder="Password" onblur="validateSignup('errorPassName','passy2',/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,8,'Password must contain atleast one uppercase letter,1 special character and one number')" required>
+                        <div class="text-danger" id="errorPassName"></div>
+
+                        
+                    </div>
+                    <div class="text-center" >
+                        <button type="submit" id="event1" class="btn btn-info" onclick="formcheck2()">Login</button>
+                        <button type="submit" id="event2" class="btn btn-warning">Forgot Password?</button>
+                    </div>
+                    <input type="checkbox" checked>Remember Me
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-danger" onclick="document.querySelector('.loginForm').style.display='none'">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="signupForm">
+
+        <div class="paretnDiv modal animate text-center " style="display:flex; justify-content: center"  >
+
+            <div style="width: 65%;">
+                
+                <form action="" id="frm2" class="text-light">
+                    <span onclick="document.querySelector('.signupForm').style.display='none'" class="close" title="Close Modal"><i class="fas fa-times"></i></span>
+                    <h2 class="text-center">Sign Up</h2>
+                    <div class="form-group">
+                        <label for="pass">Enter Full name</label>
+                        <input type="text" id="username"  class="form-control" placeholder="Full name" onblur="validateSignup('errorName','username',/^[a-zA-Z ]{2,30}$/,2,'Username may not contain any numbers or special characters')" required>
+                        <div class="text-danger" id="errorName"></div>
+                        <label >Enter Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Email" onblur="validateSignup('errorEmail','email',
+                        null,null,'Enter valid Email')" required>
+                        <div class="text-danger" id="errorEmail"></div>
+                        <small>We Will Never Share This With Anyone</small>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="gpa">Enter Password</label>
+                        <input type="password" id="passy"  class="form-control" placeholder="Password" onblur="validateSignup('errorPass','passy',/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,8,'Password must contain atleast one uppercase letter,1 special character and one number')" required>
+                        <div class="text-danger" id="errorPass"></div>
+                        <label for="gpa">Confirm Password</label>
+                        <input type="password" id="confirmPassy"  class="form-control" placeholder="Confirm Password" onblur="confirmPass('errorCP')" required>
+                        <div class="text-danger" id="errorCP"></div>                        
+                    </div>
+                    <div class="text-center" >
+                        <button  class="btn btn-info" onclick="formCheck()">Sign Up</button>
+                        <!-- <button type="submit" id="event2" class="btn btn-warning">Forgot Password?</button> -->
+                    </div>
+                    <br>
+                    <input type="checkbox" checked>Do You Want To Receive Emails About Our Latest Offers?
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-danger" onclick="document.querySelector('.signupForm').style.display='none'">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>    
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+            // location.href = "shoppingCart.html";
+            localStorage.setItem("addToTable",2);
+            console.log("page reloaded")
+        }
+
+        function categories(){
+            var allCats = document.querySelectorAll(".hideOnAddition a")
+            for(let i = 0; i<allCats.length; i++){
+                allCats[i].addEventListener("click",function(){
+                    localStorage.setItem("toLoad",allCats[i].innerText)
+                })
+            }
+        }
+        categories()
+
+        if(localStorage.getItem("addToTable") == 1){
+            if(localStorage.getItem("tableData") == null){
+                // console.log("check null")
+                var newRow= document.createElement("tr");
+                var table =document.querySelector("#list tbody");
+                table.append(newRow);
+
+                var newtd= document.createElement("td");
+                newtd.innerText = localStorage.getItem("title")
+
+                var errorDiv = document.createElement("div")
+                var errorMessage = document.createTextNode("Enter valid number in the 1-9 range")
+                errorDiv.append(errorMessage)
+                table.append(errorDiv);
+                errorDiv.style.display = "none"
+                console.log(errorDiv.getAttribute("id"))
+                console.log(errorDiv.innerText)
+                var newtd2=document.createElement("td");
+                var inputQuantity = document.createElement("input")
+                inputQuantity.setAttribute("type","text")
+                inputQuantity.style.width = "2rem"               
+
+                newtd2.append(inputQuantity);
+                
+                var newtd3= document.createElement("td");
+                newtd3.innerText = localStorage.getItem("price")
+
+                var newtd4 = document.createElement("td")
+                var icon = document.createElement("i")
+                icon.setAttribute("class", "far fa-times-circle")
+                icon.style.color="red"
+                newtd4.append(icon)
+
+                
+                newRow.append(newtd);
+                newRow.append(newtd2);
+                newRow.append(newtd3);
+                newRow.append(newtd4)
+
+                localStorage.setItem("addToTable",0)
+                var data = [
+                        { 
+                            name: newtd.innerText,
+                            price:newtd3.innerText
+                        }
+                ];
+                var baseCostss = [
+                    {
+                        price:parseInt(newtd3.innerText.substring(1))
+                    }
+                ];
+
+                localStorage.setItem("baseCosts",JSON.stringify(baseCostss))
+                localStorage.setItem("tableData",JSON.stringify(data));
+            }
+            else{
+                var carryOn = alreadyAdded();
+                    var baseCostss = JSON.parse(localStorage.getItem("baseCosts"))
+                    var data = JSON.parse(localStorage.getItem("tableData"))
+                    var objLength = Object.keys(data).length;
+                    console.log(objLength)
+
+                    for(let i = 0; i<objLength;i++){
+                        var newRow= document.createElement("tr");
+                        var table =document.querySelector("#list tbody");
+                        table.append(newRow);
+
+                        console.log(data)
+
+                        var newtd= document.createElement("td");
+                        newtd.innerText = data[i].name;
+                        console.log(data[i].name)
+
+                        var errorDiv = document.createElement("div")
+                        var errorMessage = document.createTextNode("Enter valid number in the 1-9 range")
+                        errorDiv.append(errorMessage)
+                        table.append(errorDiv);
+                        errorDiv.style.display = "none"
+                        console.log(errorDiv.getAttribute("id"))
+                        console.log(errorDiv.innerText)
+                        var newtd2=document.createElement("td");
+                        var inputQuantity = document.createElement("input")
+                        inputQuantity.setAttribute("type","text")
+                        inputQuantity.style.width = "2rem"
+
+                        newtd2.append(inputQuantity);
+                        
+                        var newtd3= document.createElement("td");
+                        newtd3.innerText = data[i].price
+                        
+                        var newtd4 = document.createElement("td")
+                        var icon = document.createElement("i")
+                        icon.setAttribute("class", "far fa-times-circle")
+                        icon.style.color="red"
+                        newtd4.append(icon)
+                        
+                        newRow.append(newtd);
+                        newRow.append(newtd2);
+                        newRow.append(newtd3);
+                        newRow.append(newtd4);
+                    }
+                if(carryOn == 1){
+                
+                    var newRow= document.createElement("tr");
+                        var table =document.querySelector("#list tbody");
+                        table.append(newRow);
+
+                        var newtd= document.createElement("td");
+                        newtd.innerText = localStorage.getItem("title")
+
+                        var errorDiv = document.createElement("div")
+                        var errorMessage = document.createTextNode("Enter valid number in the 1-9 range")
+                        errorDiv.append(errorMessage)
+                        table.append(errorDiv);
+                        errorDiv.style.display = "none"
+                        console.log(errorDiv.getAttribute("id"))
+                        console.log(errorDiv.innerText)
+                        var newtd2=document.createElement("td");
+                        var inputQuantity = document.createElement("input")
+                        inputQuantity.setAttribute("type","text")
+                        inputQuantity.style.width = "2rem"
+
+                        newtd2.append(inputQuantity);
+
+                        
+                        var newtd3= document.createElement("td");
+                        newtd3.innerText = localStorage.getItem("price")
+
+                        var newtd4 = document.createElement("td")
+                        var icon = document.createElement("i")
+                        icon.setAttribute("class", "far fa-times-circle")
+                        icon.style.color="red"
+                        newtd4.append(icon)
+                        
+                        
+                        newRow.append(newtd);
+                        newRow.append(newtd2);
+                        newRow.append(newtd3);
+                        newRow.append(newtd4);
+                        // var val = newtd2.value;
+
+                    data.push({name: newtd.innerText, quantity:inputQuantity.value,price:newtd3.innerText})
+                    baseCostss.push({price:parseInt(newtd3.innerText.substring(1))})
+
+                    localStorage.setItem("baseCosts",JSON.stringify(baseCostss))
+                    localStorage.setItem("tableData",JSON.stringify(data))
+                    localStorage.setItem("addToTable",0);
+                }
+                
+            }
+        }
+        if(localStorage.getItem("addToTable")==2){
+            var data = JSON.parse(localStorage.getItem("tableData"))
+                var objLength = Object.keys(data).length;
+                console.log(objLength)
+
+                for(let i = 0; i<objLength;i++){
+                    var newRow= document.createElement("tr");
+                    var table =document.querySelector("#list tbody");
+                    table.append(newRow);
+                    console.log(data)
+                    var newtd= document.createElement("td");
+                    newtd.innerText = data[i].name;
+                    console.log(data[i].name)
+
+
+                    var errorDiv = document.createElement("div")
+                        var errorMessage = document.createTextNode("Enter valid number in the 1-9 range")
+                        errorDiv.append(errorMessage)
+                        table.append(errorDiv);
+                        errorDiv.style.display = "none"
+                        console.log(errorDiv.getAttribute("id"))
+                        console.log(errorDiv.innerText)
+                        var newtd2=document.createElement("td");
+                        var inputQuantity = document.createElement("input")
+                        inputQuantity.setAttribute("type","text")
+                        inputQuantity.style.width = "2rem"
+
+                        newtd2.append(inputQuantity);
+
+                    
+                    var newtd3= document.createElement("td");
+                    newtd3.innerText = data[i].price
+                    
+                    var newtd4 = document.createElement("td")
+                    var icon = document.createElement("i")
+                    icon.setAttribute("class", "far fa-times-circle")
+                    icon.style.color="red"
+                    newtd4.append(icon)
+
+                    
+                    newRow.append(newtd);
+                    newRow.append(newtd2);
+                    newRow.append(newtd3);
+                    newRow.append(newtd4);
+                }
+        }
+
+        if(JSON.parse(localStorage.getItem("tableData")).length != 0){
+            document.getElementsByClassName("hideOnAddition")[0].style.display = "none";
+
+            document.getElementById("header").innerText = "Shopping Cart"
+        }
+        else{
+            document.querySelector(".table").style.display = "none";
+            document.querySelector(".total").style.display = "none";
+            
+        }
+
         var anchors = document.querySelectorAll(".item ul li a");
 
         for(let i = 0; i < anchors.length; i++){
@@ -233,13 +561,117 @@
             document.getElementById("latestSearchDiv2").style.display = "block"
             // allDescriptions[2].innerText = localStorage.getItem("latestDesc3")
         }
-        // console.log(JSON.parse(arr))
-        // for(let i = 0; i<arr.length;i+=4){
-        //     allImages[i].setAttribute("src",arr);
-        // }
-        // console.log(JSON.stringify(arr))
-        // allImages[0].setAttribute("src",arr[0]);
 
+        function changeStorage(){
+            localStorage.setItem("addToTable",2)
+        }
+
+        function valueCalculate(){
+            var quantityVal = document.getElementById("quantity").value;
+            return quantityVal;
+        }
+
+        function validate(){
+                var regex = /^[1-9]$/
+                var ctrl = document.getElementById("quantity").value;
+                if(regex.test(ctrl)==false){
+                    document.getElementById("error").style.display = "block"
+                    document.getElementById("quantity").style.border = "3px solid red"
+                }
+                else{
+                    document.getElementById("error").style.display = "none";
+                    document.getElementById("quantity").style.border = "3px solid green"
+                    // document.getElementById("addNow").style.display = "block"
+                }
+        }
+
+        function alreadyAdded(){
+            var data = JSON.parse(localStorage.getItem("tableData"))
+            var objLength = Object.keys(data).length;
+            var switcher = 1;
+
+            for(let i = 0; i <objLength ;i++){
+                if(localStorage.getItem("title") == data[i].name){
+                    alert("This item is already added")
+                    switcher = 0;
+                    break;
+                }
+                
+            }
+            return switcher;
+        }
+
+        function cartInteractivity(){
+            var allRows = document.querySelectorAll("tbody tr input");
+            
+            var alltr = document.querySelectorAll("tbody tr")
+            var allErrorDivs = document.querySelectorAll("#list div")
+            var allCrosses = document.querySelectorAll("#list tr i")
+
+            var data = JSON.parse(localStorage.getItem("tableData"))
+            var baseCostss = JSON.parse(localStorage.getItem("baseCosts"))
+
+
+            for(let i = 0 ; i < data.length;i++){
+                allRows[i].addEventListener("blur",function(){
+                    var regex = /^[1-9]$/
+                    var ctrl = allRows[i].value;
+                    if(regex.test(ctrl)==false){
+                        allErrorDivs[i].style.display="block"
+                        allRows[i].style.border="3px solid red"
+                        allErrorDivs[i].style.color="red"
+                    }
+                    else{
+                        allErrorDivs[i].style.display="none"
+                        allRows[i].style.border="3px solid green"
+                        costCalculate(i,allRows[i].value);
+                    
+                 }
+                });
+            }
+
+            for(let i = 0; i<allCrosses.length;i++){
+                allCrosses[i].addEventListener("click",function(){
+                    alltr[i].remove()
+                    data.splice(i,1)
+                    localStorage.setItem("tableData",JSON.stringify(data))
+
+                    baseCostss.splice(i,1)
+
+                    localStorage.setItem("baseCosts",JSON.stringify(baseCostss))
+                    localStorage.setItem("addToTable",2)
+                    location.href = "shoppingCart.html"
+
+                })
+            }
+
+        }
+        cartInteractivity();
+
+        function costCalculate(index,quantity){
+            console.log(index)
+            var baseCostss = JSON.parse(localStorage.getItem("baseCosts"))
+            console.log(baseCostss[index])
+            console.log("quantity is : "+quantity)
+            var price = parseInt(baseCostss[index].price)*quantity
+
+            var allRows = document.querySelectorAll("tbody tr")
+            allRows[index].children[2].innerText ="$"+ price
+            totalAmount()
+
+        }
+       
+        function totalAmount(){
+            // console.log("total amount")
+            var total=0;
+            var allRows = document.querySelectorAll("tbody tr")
+            for(let i = 0; i<allRows.length;i++){
+                total += parseInt(allRows[i].children[2].innerText.substring(1))
+            }
+            document.getElementById("amount").innerText ="$"+ total;
+
+        }
+        // totalAmount()
     </script>
 </body>
 </html>

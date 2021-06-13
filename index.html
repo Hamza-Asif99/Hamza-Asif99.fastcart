@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/0793418c64.js" crossorigin="anonymous"></script>
     
     <script defer src="script.js"></script>
+    <script defer src="validation.js"></script>
    
     <title>Bootstrap Front End</title>
 </head>
@@ -42,7 +43,7 @@
                 </li>
                 <li>
                     
-                    <a href="shoppingCart.html" target="" id="cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="shoppingCart.html" onclick="changeStorage()" target="" id="cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -399,7 +400,7 @@
                     </div>
                     <div class="form-group">
                         <label for="gpa">Enter Password</label>
-                        <input type="password" id="passy2" class="form-control" placeholder="Password" value="hhhhhH1!" onblur="validateSignup('errorPassName','passy2',/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,8,'Password must contain atleast one uppercase letter,1 special character and one number')" required>
+                        <input type="password" id="passy2" class="form-control" placeholder="Password"  onblur="validateSignup('errorPassName','passy2',/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,8,'Password must contain atleast one uppercase letter,1 special character and one number')" required>
                         <div class="text-danger" id="errorPassName"></div>
 
                         
@@ -458,78 +459,11 @@
                 </form>
             </div>
         </div>
+    </div>
 
     <script>
         // Form Validation script
-        var isLogin;
-
-        function validateSignup(id,id2,regex,minLength,message){
-            var ctrl = document.getElementById(id2);
-            if(id2 == "email"){
-                regex= /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            }       
-            if(regex.test(ctrl.value) == false){
-                if(ctrl.value.length < minLength){
-                    document.getElementById(id).innerText = "Enter atleast "+minLength+" characters"
-                    document.getElementById(id2).style.border = "4px solid red";
-                }
-                else{
-                    document.getElementById(id).innerText = message;
-                    document.getElementById(id2).style.border = "4px solid red";
-                }
-            }
-            else{
-                document.getElementById(id).innerText = "";
-                document.getElementById(id2).style.border = "4px solid green";
-            }
-        }
-        function confirmPass(id){
-            var ctrl = document.getElementById("confirmPassy");
-            var originalPass = document.getElementById("passy");
-                if(document.getElementById("passy").style.borderColor == "green"){
-
-                    if(ctrl.value == originalPass.value){
-                        document.getElementById(id).innerText = "";
-                        document.getElementById("confirmPassy").style.border = "4px solid green";
-                    }
-                    else{
-                        document.getElementById(id).innerText = "Password must be the same";
-                        document.getElementById("confirmPassy").style.border = "4px solid red";
-                    }
-                }
-        }
-        function formCheck(){
-            if(document.getElementById("username").style.borderColor == "green"&&document.getElementById("email").style.borderColor == "green"
-            &&document.getElementById("passy").style.borderColor == "green"&&document.getElementById("confirmPassy").style.borderColor == "green"){
-                // document.getElementById("username").value= null;
-                // document.getElementById("email").value = null;
-                // document.getElementById("passy").value = null;
-                // document.getElementById("confirmPass").value = null;
-                document.querySelector('.signupForm').style.display='none';
-                // location.reload();
-                
-            }
-        }
-        function formcheck2(){
-            if(document.getElementById("loginName").style.borderColor == "green" && document.getElementById("passy2").style.borderColor == "green"){
-                document.querySelector('.loginForm').style.display='none';
-                isLogin = true;
-            }
-            else{
-                isLogin = false;
-            }
-        }
-        // function shoppingCart(){
-        //     if(isLogin == false || isLogin == null){
-        //         alert("You must login to view your cart")
-        //     }
-        //     else{
-        //         document.getElementById("cart").setAttribute("src","shoppingCart.html");
-        //         document.getElementById("cart").setAttribute("target","_blank");
-        //         document.getElementById("cart").click();
-        //         // window.location.href ="shoppingCart.html";
-        //     }
-        // }
+ 
         let allImage = document.querySelectorAll(".anchor img");
         let allTitle = document.querySelectorAll(".anchor h2");     //This script pulls data from the JSON file and onto the categories page
         let allPrice = document.querySelectorAll(".anchor span")
@@ -550,6 +484,10 @@
             document.getElementById("latestSearchDiv").style.display = "none"
             document.getElementById("latestSearchDiv2").style.display = "block"
 
+        }
+
+        function changeStorage(){
+            localStorage.setItem("addToTable",2)
         }
     </script>
 
