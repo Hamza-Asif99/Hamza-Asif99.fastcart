@@ -45,8 +45,11 @@
                     <a href="#" class="nav-link" onclick="document.querySelector('.signupForm ').style.display='block'">SignUp</a>
                 </li>
                 <li>
+                    <a href="wishList.html" onclick="changeStorage2()" title="Wishlist" id="wishlist" class="nav-link"><i class="fas fa-heart"></i></a>
+                </li>
+                <li>
                     
-                    <a href="shoppingCart.html" onclick="changeStorage()" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="shoppingCart.html" onclick="changeStorage()" title="Shopping Cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -260,6 +263,9 @@
             function changeStorage(){
                 localStorage.setItem("addToTable",2)
             }
+            function changeStorage2(){
+            localStorage.setItem("addToWishlist",2)
+        }
         </script>
 </body>
 </html>

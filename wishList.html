@@ -49,18 +49,16 @@
             </ul>
         </div>
     </nav>
-
     <div class="container itemsDisplay">
         <div class="center text-center">
-            <h3 id="header" >Add items to your cart !</h3>
+            <h3 id="header" >Add items to your wishlist</h3>
 
         </div>        
 
         <div class="row categoriesRow hideOnAddition">
             <div class="col-12 item">
-                <h4>Cart Is Empty</h4>
-                <p class="text-dark">Your shopping cart lives to serve, give it purpose and add items to buy.
-                    <br><br> For inspiration, browse the categories below, or just revisit your latest searches.
+                <h4>Wishlist Is Empty</h4>
+                <p class="text-dark"> For inspiration, browse the categories below, or just revisit your latest searches.
                 </p>
             </div>
             <br>
@@ -105,9 +103,9 @@
                     <thead>
                       <tr class="text-warning">
                         <th scope="col">Name</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Cost</th>
+                        <th scope="col">Price</th>
                         <th scope="col">Remove</th>
+                        <th scope="col">Quick Add</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -116,24 +114,8 @@
                   </table>
             </div>
         </div>
-        <div class="total text-warning p-4" style="background-color:rgba(1, 1, 1, 0.8) ;">
-            <span>Total Amount: </span>
-            <span class="text-light ml-5" id="amount"></span>
-        </div>
     </div>
 
-
-    <div class="container itemsDisplay " id="latestSearchDiv">
-        <div class="center text-center">
-
-            <h3>Your Latest Searches</h3>
-        </div>
-        <div class="row categoriesRow">
-            <div class="col-12 item">
-                <p class="text-dark">Browse around to see your latest searches here.</p>
-            </div>
-        </div>
-    </div>
     <div class="container itemsDisplay" id="latestSearchDiv2" style="display: none;">
         <div class="center text-center">
 
@@ -188,7 +170,6 @@
         </div>
     </div>
 
-    
 
     <div class="container-fluid text-light">
         <footer class="footer">
@@ -300,16 +281,96 @@
             </div>
         </div>
     </div>
+    <div class="container itemsDisplay " id="latestSearchDiv">
+        <div class="center text-center">
 
+            <h3>Your Latest Searches</h3>
+        </div>
+        <div class="row categoriesRow">
+            <div class="col-12 item">
+                <p class="text-dark">Browse around to see your latest searches here.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container itemsDisplay" id="latestSearchDiv2" style="display: none;">
+        <div class="center text-center">
 
+            <h3>Your Latest Searches</h3>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="item">
+                    <div  class="anchor">
 
+                        <img src="" id="images" class="w-100" alt="Item display">
+                        <div class="details">
 
-    <script>    
+                            <h2></h2>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p></p>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4" id="item2">
+                <div class="item">
+                    <div class="anchor">
+
+                        <img src="" id="images" class="w-100" alt="Item display">
+                        <div class="details">
+
+                            <h2></h2>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4" id="item3" >
+                <div class="item">
+                    <div class="anchor">
+
+                        <img src="" id="images" class="w-100" alt="Item display">
+                        <div class="details">
+
+                            <h2></h2>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
         if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-            // location.href = "shoppingCart.html";
-            localStorage.setItem("addToTable",2);
+            localStorage.setItem("addToWishlist",2);
             console.log("page reloaded")
         }
+        function addingItems(){
+            if(localStorage.getItem("addToWishlist") == 1){
+                if(localStorage.getItem("wishlistData") == null){
+                    appendRow(0)
+                }
+                else{
+                    var carryOn = alreadyAdded()
+                    refreshRows()
+                    if(carryOn == 1){
+                        appendRow(1)
+                    }
+                }
+            }
+            if(localStorage.getItem("addToWishlist")==2){
+                refreshRows()
+            }
+            display()
+
+        }
+        addingItems()
 
         function categories(){
             var allCats = document.querySelectorAll(".hideOnAddition a")
@@ -321,258 +382,11 @@
         }
         categories()
 
-        if(localStorage.getItem("addToTable") == 1){
-            if(localStorage.getItem("tableData") == null){
-                // console.log("check null")
-                var newRow= document.createElement("tr");
-                var table =document.querySelector("#list tbody");
-                table.append(newRow);
-
-                var newtd= document.createElement("td");
-                newtd.innerText = localStorage.getItem("title")
-
-                var errorDiv = document.createElement("div")
-                var errorMessage = document.createTextNode("Enter valid number in the 1-9 range")
-                errorDiv.append(errorMessage)
-                table.append(errorDiv);
-                errorDiv.style.display = "none"
-                console.log(errorDiv.getAttribute("id"))
-                console.log(errorDiv.innerText)
-                var newtd2=document.createElement("td");
-                var inputQuantity = document.createElement("input")
-                inputQuantity.setAttribute("type","text")
-                inputQuantity.style.width = "2rem"               
-
-                newtd2.append(inputQuantity);
-                
-                var newtd3= document.createElement("td");
-                newtd3.innerText = localStorage.getItem("price")
-
-                var newtd4 = document.createElement("td")
-                var icon = document.createElement("i")
-                icon.setAttribute("class", "far fa-times-circle")
-                icon.style.color="red"
-                newtd4.append(icon)
-
-                
-                newRow.append(newtd);
-                newRow.append(newtd2);
-                newRow.append(newtd3);
-                newRow.append(newtd4)
-
-                localStorage.setItem("addToTable",0)
-                var data = [
-                        { 
-                            name: newtd.innerText,
-                            price:newtd3.innerText
-                        }
-                ];
-                var baseCostss = [
-                    {
-                        price:parseInt(newtd3.innerText.substring(1))
-                    }
-                ];
-
-                localStorage.setItem("baseCosts",JSON.stringify(baseCostss))
-                localStorage.setItem("tableData",JSON.stringify(data));
-            }
-            else{
-                var carryOn = alreadyAdded();
-                    var baseCostss = JSON.parse(localStorage.getItem("baseCosts"))
-                    var data = JSON.parse(localStorage.getItem("tableData"))
-                    var objLength = Object.keys(data).length;
-
-                    for(let i = 0; i<objLength;i++){
-                        var newRow= document.createElement("tr");
-                        var table =document.querySelector("#list tbody");
-                        table.append(newRow);
-
-                        console.log(data)
-
-                        var newtd= document.createElement("td");
-                        newtd.innerText = data[i].name;
-                        console.log(data[i].name)
-
-                        var errorDiv = document.createElement("div")
-                        var errorMessage = document.createTextNode("Enter valid number in the 1-9 range")
-                        errorDiv.append(errorMessage)
-                        table.append(errorDiv);
-                        errorDiv.style.display = "none"
-                        console.log(errorDiv.getAttribute("id"))
-                        console.log(errorDiv.innerText)
-                        var newtd2=document.createElement("td");
-                        var inputQuantity = document.createElement("input")
-                        inputQuantity.setAttribute("type","text")
-                        inputQuantity.style.width = "2rem"
-
-                        newtd2.append(inputQuantity);
-                        
-                        var newtd3= document.createElement("td");
-                        newtd3.innerText = data[i].price
-                        
-                        var newtd4 = document.createElement("td")
-                        var icon = document.createElement("i")
-                        icon.setAttribute("class", "far fa-times-circle")
-                        icon.style.color="red"
-                        newtd4.append(icon)
-                        
-                        newRow.append(newtd);
-                        newRow.append(newtd2);
-                        newRow.append(newtd3);
-                        newRow.append(newtd4);
-                    }
-                if(carryOn == 1){
-                
-                    var newRow= document.createElement("tr");
-                        var table =document.querySelector("#list tbody");
-                        table.append(newRow);
-
-                        var newtd= document.createElement("td");
-                        newtd.innerText = localStorage.getItem("title")
-
-                        var errorDiv = document.createElement("div")
-                        var errorMessage = document.createTextNode("Enter valid number in the 1-9 range")
-                        errorDiv.append(errorMessage)
-                        table.append(errorDiv);
-                        errorDiv.style.display = "none"
-                        console.log(errorDiv.getAttribute("id"))
-                        console.log(errorDiv.innerText)
-                        var newtd2=document.createElement("td");
-                        var inputQuantity = document.createElement("input")
-                        inputQuantity.setAttribute("type","text")
-                        inputQuantity.style.width = "2rem"
-
-                        newtd2.append(inputQuantity);
-
-                        
-                        var newtd3= document.createElement("td");
-                        newtd3.innerText = localStorage.getItem("price")
-
-                        var newtd4 = document.createElement("td")
-                        var icon = document.createElement("i")
-                        icon.setAttribute("class", "far fa-times-circle")
-                        icon.style.color="red"
-                        newtd4.append(icon)
-                        
-                        
-                        newRow.append(newtd);
-                        newRow.append(newtd2);
-                        newRow.append(newtd3);
-                        newRow.append(newtd4);
-                        // var val = newtd2.value;
-
-                    data.push({name: newtd.innerText, quantity:inputQuantity.value,price:newtd3.innerText})
-                    baseCostss.push({price:parseInt(newtd3.innerText.substring(1))})
-
-                    localStorage.setItem("baseCosts",JSON.stringify(baseCostss))
-                    localStorage.setItem("tableData",JSON.stringify(data))
-                    localStorage.setItem("addToTable",0);
-                }
-                
-            }
-        }
-        if(localStorage.getItem("addToTable")==2){
-            var data = JSON.parse(localStorage.getItem("tableData"))
-                var objLength = Object.keys(data).length;
-                console.log(objLength)
-
-                for(let i = 0; i<objLength;i++){
-                    var newRow= document.createElement("tr");
-                    var table =document.querySelector("#list tbody");
-                    table.append(newRow);
-                    console.log(data)
-                    var newtd= document.createElement("td");
-                    newtd.innerText = data[i].name;
-                    console.log(data[i].name)
-
-
-                    var errorDiv = document.createElement("div")
-                        var errorMessage = document.createTextNode("Enter valid number in the 1-9 range")
-                        errorDiv.append(errorMessage)
-                        table.append(errorDiv);
-                        errorDiv.style.display = "none"
-                        console.log(errorDiv.getAttribute("id"))
-                        console.log(errorDiv.innerText)
-                        var newtd2=document.createElement("td");
-                        var inputQuantity = document.createElement("input")
-                        inputQuantity.setAttribute("type","text")
-                        inputQuantity.style.width = "2rem"
-
-                        newtd2.append(inputQuantity);
-
-                    
-                    var newtd3= document.createElement("td");
-                    newtd3.innerText = data[i].price
-                    
-                    var newtd4 = document.createElement("td")
-                    var icon = document.createElement("i")
-                    icon.setAttribute("class", "far fa-times-circle")
-                    icon.style.color="red"
-                    newtd4.append(icon)
-
-                    
-                    newRow.append(newtd);
-                    newRow.append(newtd2);
-                    newRow.append(newtd3);
-                    newRow.append(newtd4);
-                }
-        }
-
-        if(JSON.parse(localStorage.getItem("tableData")).length != 0){
-            document.getElementsByClassName("hideOnAddition")[0].style.display = "none";
-
-            document.getElementById("header").innerText = "Shopping Cart"
-        }
-        else{
-            document.querySelector(".table").style.display = "none";
-            document.querySelector(".total").style.display = "none";
-            
-        }
-
-        var anchors = document.querySelectorAll(".item ul li a");
-
-        for(let i = 0; i < anchors.length; i++){
-            anchors[i].addEventListener("click",function(){
-            localStorage.setItem("toLoad",anchors[i].innerText)
-        
-        })
-        }
-        // let arr = localStorage.getItem("latestSearches");
-        let allImages = document.querySelectorAll(".anchor img");
-        let allTitles = document.querySelectorAll(".anchor h2");    
-        let allPrices = document.querySelectorAll(".anchor span")
-        let allDescriptions = document.querySelectorAll(".item p")
-
-        allImages[0].setAttribute("src",localStorage.getItem("latestImage1"))
-        allTitles[0].innerText = localStorage.getItem("latestTitle1")
-        allPrices[0].innerText = localStorage.getItem("latestPrice1")
-        // allDescriptions[0].innerText = localStorage.getItem("latestDesc1")
-
-        if(localStorage.getItem("latestImage2")!=null){
-            allImages[1].setAttribute("src",localStorage.getItem("latestImage2"))   
-            allTitles[1].innerText = localStorage.getItem("latestTitle2")
-            allPrices[1].innerText = localStorage.getItem("latestPrice2")
-            // allDescriptions[1].innerText = localStorage.getItem("latestDesc2")
-        }
-        if(localStorage.getItem("latestImage3")!=null){
-            allImages[2].setAttribute("src",localStorage.getItem("latestImage3"))
-            allTitles[2].innerText = localStorage.getItem("latestTitle3")
-            allPrices[2].innerText = localStorage.getItem("latestPrice3")
-            document.getElementById("latestSearchDiv").style.display = "none"
-            document.getElementById("latestSearchDiv2").style.display = "block"
-            // allDescriptions[2].innerText = localStorage.getItem("latestDesc3")
-        }
-
         function changeStorage(){
             localStorage.setItem("addToTable",2)
         }
         function changeStorage2(){
             localStorage.setItem("addToWishlist",2)
-        }
-
-        function valueCalculate(){
-            var quantityVal = document.getElementById("quantity").value;
-            return quantityVal;
         }
 
         function validate(){
@@ -588,9 +402,56 @@
                     // document.getElementById("addNow").style.display = "block"
                 }
         }
+        
 
+        function appendRow(switcher){
+             var newRow= document.createElement("tr");
+                var table =document.querySelector("#list tbody");
+                table.append(newRow);
+
+                var newtd= document.createElement("td");
+                newtd.innerText = localStorage.getItem("title")
+                
+                var newtd2= document.createElement("td");
+                newtd2.innerText = localStorage.getItem("price")
+
+                var newtd3 = document.createElement("td")
+                var icon = document.createElement("i")
+                icon.setAttribute("class", "far fa-times-circle")
+                icon.style.color="red"
+                newtd3.append(icon)
+
+                var newtd4 = document.createElement("td")
+                var button = document.createElement("button")
+                button.setAttribute("class","btn")
+                button.innerText = "Add to cart"
+                newtd4.append(button)
+ 
+                newRow.append(newtd);
+                newRow.append(newtd2);
+                newRow.append(newtd3)
+                newRow.append(newtd4)
+
+                if(switcher == 1){
+                    var data = JSON.parse(localStorage.getItem("wishlistData"))
+                    data.push({name:newtd.innerText,price:newtd2.innerText})
+                    localStorage.setItem("wishlistData",JSON.stringify(data))
+                }
+                else{
+                    var data = [
+                            { 
+                                name: newtd.innerText,
+                                price:newtd2.innerText
+                            }
+                    ];
+                    localStorage.setItem("wishlistData",JSON.stringify(data))
+                    
+                }
+                localStorage.setItem("addToWishlist",0)
+
+        }
         function alreadyAdded(){
-            var data = JSON.parse(localStorage.getItem("tableData"))
+            var data = JSON.parse(localStorage.getItem("wishlistData"))
             var objLength = Object.keys(data).length;
             var switcher = 1;
 
@@ -604,78 +465,123 @@
             }
             return switcher;
         }
+        function refreshRows(){
+                    var data = JSON.parse(localStorage.getItem("wishlistData"))
+                    var objLength = Object.keys(data).length;
 
-        function cartInteractivity(){
-            var allRows = document.querySelectorAll("tbody tr input");
-            
-            var alltr = document.querySelectorAll("tbody tr")
-            var allErrorDivs = document.querySelectorAll("#list div")
-            var allCrosses = document.querySelectorAll("#list tr i")
+                    for(let i = 0; i<objLength;i++){
+                        var newRow= document.createElement("tr");
+                        var table =document.querySelector("#list tbody");
+                        table.append(newRow);
 
-            var data = JSON.parse(localStorage.getItem("tableData"))
-            var baseCostss = JSON.parse(localStorage.getItem("baseCosts"))
+                        var newtd= document.createElement("td");
+                        newtd.innerText = data[i].name;
+                        
+                        var newtd2= document.createElement("td");
+                        newtd2.innerText = data[i].price
+                        
+                        var newtd3 = document.createElement("td")
+                        var icon = document.createElement("i")
+                        icon.setAttribute("class", "far fa-times-circle")
+                        icon.style.color="red"
+                        newtd3.append(icon)
 
+                        var newtd4 = document.createElement("td")
+                        var button = document.createElement("button")
+                        button.setAttribute("class","btn ")
+                        button.innerText = "Add to cart"
+                        newtd4.append(button)
+                        
+                        newRow.append(newtd);
+                        newRow.append(newtd2);
+                        newRow.append(newtd3);
+                        newRow.append(newtd4);
 
-            for(let i = 0 ; i < data.length;i++){
-                allRows[i].addEventListener("blur",function(){
-                    var regex = /^[1-9]$/
-                    var ctrl = allRows[i].value;
-                    if(regex.test(ctrl)==false){
-                        allErrorDivs[i].style.display="block"
-                        allRows[i].style.border="3px solid red"
-                        allErrorDivs[i].style.color="red"
                     }
-                    else{
-                        allErrorDivs[i].style.display="none"
-                        allRows[i].style.border="3px solid green"
-                        costCalculate(i,allRows[i].value);
-                    
-                 }
-                });
+        }
+
+        function display(){
+
+            if(JSON.parse(localStorage.getItem("wishlistData")).length != 0){
+                document.getElementsByClassName("hideOnAddition")[0].style.display = "none";
+    
+                document.getElementById("header").innerText = "Your wishlist"
+            }
+            else{
+                document.querySelector(".table").style.display = "none";
+                
+            }
+        }
+        function latestSearches(){
+            let allImages = document.querySelectorAll(".anchor img");
+            let allTitles = document.querySelectorAll(".anchor h2");    
+            let allPrices = document.querySelectorAll(".anchor span")
+            let allDescriptions = document.querySelectorAll(".item p")
+
+            allImages[0].setAttribute("src",localStorage.getItem("latestImage1"))
+            allTitles[0].innerText = localStorage.getItem("latestTitle1")
+            allPrices[0].innerText = localStorage.getItem("latestPrice1")
+
+            if(localStorage.getItem("latestImage2")!=null){
+                allImages[1].setAttribute("src",localStorage.getItem("latestImage2"))   
+                allTitles[1].innerText = localStorage.getItem("latestTitle2")
+                allPrices[1].innerText = localStorage.getItem("latestPrice2")
+            }
+            if(localStorage.getItem("latestImage3")!=null){
+                allImages[2].setAttribute("src",localStorage.getItem("latestImage3"))
+                allTitles[2].innerText = localStorage.getItem("latestTitle3")
+                allPrices[2].innerText = localStorage.getItem("latestPrice3")
+                document.getElementById("latestSearchDiv").style.display = "none"
+                document.getElementById("latestSearchDiv2").style.display = "block"
+            }
+        }
+        latestSearches()
+
+        
+
+        function itemRemoval(indexSpecified){
+            var allCrosses = document.querySelectorAll("#list tr i")
+            var alltr = document.querySelectorAll("tbody tr")
+            var data = JSON.parse(localStorage.getItem("wishlistData"))
+
+            if(indexSpecified != null){
+                alltr[indexSpecified].remove()
+                data.splice(indexSpecified,1)
+                localStorage.setItem("wishlistData",JSON.stringify(data))
+                localStorage.setItem("addToWishlist",2)
+
+            }
+            else{
+                for(let i = 0; i<allCrosses.length;i++){
+                    allCrosses[i].addEventListener("click",function(){
+                        alltr[i].remove()
+                        data.splice(i,1)
+                        localStorage.setItem("wishlistData",JSON.stringify(data))
+    
+                        localStorage.setItem("addToWishlist",2)
+                        location.href = "wishList.html"
+    
+                    })
+                }
             }
 
-            for(let i = 0; i<allCrosses.length;i++){
-                allCrosses[i].addEventListener("click",function(){
-                    alltr[i].remove()
-                    data.splice(i,1)
-                    localStorage.setItem("tableData",JSON.stringify(data))
+        }
+        itemRemoval()
 
-                    baseCostss.splice(i,1)
+        function addingToCart(){
+            var allButtons = document.querySelectorAll("#list tr button")
+            var allRows = document.querySelectorAll("tbody tr")
 
-                    localStorage.setItem("baseCosts",JSON.stringify(baseCostss))
-                    localStorage.setItem("addToTable",2)
+            for(let i =0; i < allRows.length ;i++){
+                allButtons[i].addEventListener("click",function(){
+                    localStorage.setItem("title",allRows[i].children[0].innerText)
+                    localStorage.setItem("price",allRows[i].children[1].innerText)
+                    localStorage.setItem("addToTable",1)
+                    itemRemoval(i)
                     location.href = "shoppingCart.html"
-
                 })
             }
-
         }
-        cartInteractivity();
-
-        function costCalculate(index,quantity){
-            console.log(index)
-            var baseCostss = JSON.parse(localStorage.getItem("baseCosts"))
-            console.log(baseCostss[index])
-            console.log("quantity is : "+quantity)
-            var price = parseInt(baseCostss[index].price)*quantity
-
-            var allRows = document.querySelectorAll("tbody tr")
-            allRows[index].children[2].innerText ="$"+ price
-            totalAmount()
-
-        }
-       
-        function totalAmount(){
-            // console.log("total amount")
-            var total=0;
-            var allRows = document.querySelectorAll("tbody tr")
-            for(let i = 0; i<allRows.length;i++){
-                total += parseInt(allRows[i].children[2].innerText.substring(1))
-            }
-            document.getElementById("amount").innerText ="$"+ total;
-
-        }
-        // totalAmount()
+        addingToCart()
     </script>
 </body>
-</html>

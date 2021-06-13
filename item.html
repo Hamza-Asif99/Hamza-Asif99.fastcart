@@ -45,8 +45,11 @@
                     <a href="#" class="nav-link" onclick="document.querySelector('.signupForm ').style.display='block'">SignUp</a>
                 </li>
                 <li>
+                    <a href="wishList.html" onclick="changeStorage2()" title="Wishlist" id="wishlist" class="nav-link"><i class="fas fa-heart"></i></a>
+                </li>
+                <li>
                     
-                    <a href="shoppingCart.html" onclick="changeStorage()" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="shoppingCart.html" onclick="changeStorage()" title="Shopping Cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
                 </li>
             </ul>
         </div>
@@ -75,13 +78,15 @@
 
                         <button class="btn" id="shoppingCart">Add To Cart</button>
                     </a>
-    
-                    <button class="btn">Add To WishList</button>
+                    <a href="wishList.html">
+
+                        <button id="wishList" class="btn">Add To WishList</button>
+                    </a>
                 </div>
-                <div><input type="text" onblur="validate()" id="quantity" style="display: none;">How many items do you want to add to cart?</div>
+                <!-- <div><input type="text" onblur="validate()" id="quantity" style="display: none;">How many items do you want to add to cart?</div> -->
             
-                <button class="btn" onclick="addCart()" id="addNow" style="display:none">Add Now</button>
-                <div class="text-danger"id="error" style="display: none;">Please enter a valid number b/w 1-9</div>
+                <!-- <button class="btn" onclick="addCart()" id="addNow" style="display:none">Add Now</button>
+                <div class="text-danger"id="error" style="display: none;">Please enter a valid number b/w 1-9</div> -->
             </div>
         </div>
 
@@ -212,6 +217,9 @@
             function changeStorage(){
                 localStorage.setItem("addToTable",2)
             }
+            document.getElementById("wishList").addEventListener("click",function(){
+                localStorage.setItem("addToWishlist",1)
+            })
         </script>
 
 </body>
